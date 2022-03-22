@@ -106,7 +106,7 @@ export default function Hero() {
             <h2>
               <span className="text-4xl font-bold text-lime-600">
                 {' '}
-                Lots of practicing.
+                Practice with Experts.
               </span>
             </h2>
             <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
