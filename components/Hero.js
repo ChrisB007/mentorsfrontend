@@ -137,7 +137,7 @@ export default function Hero() {
             muted
             loop
             style={{ width: '605px', height: '521px' }}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="hero-video absolute inset-0 w-full h-full object-cover pr-1"
           >
             <source src="/images/tutvideo.mp4" />
           </video>

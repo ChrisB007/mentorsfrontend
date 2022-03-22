@@ -5,3 +5,13 @@
 .hero-div {
   height: 38rem;
 }
+
+/*Media Querries*/
+@media only screen and (max-width: 1023px) {
+  .hero-video {
+    display: none;
+  }
+  .hero-div {
+    height: 27rem;
+  }
+}
