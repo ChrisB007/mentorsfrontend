@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Hero from '../components/Hero';
+import Features from '../components/Features';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
 
       <main className="bg-gradient-to-r from-gray-50 via-slate-300 to-gray-50">
         <Hero />
+        <Features />
       </main>
     </div>
   );
