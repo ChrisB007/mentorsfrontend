@@ -106,8 +106,8 @@ export default function Hero() {
             <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
               We believe that the one true way to becoming a master is by
               practicing. That is why we have built a platform that puts
-              emphasis on practice. As the saying goes - "Practice makes
-              perfect."
+              emphasis on practice. As the saying goes - &ldquo;Practice makes
+              perfect.&ldquo;
             </p>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
