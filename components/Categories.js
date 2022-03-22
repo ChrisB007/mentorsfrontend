@@ -3,31 +3,31 @@ import { DotsVerticalIcon } from '@heroicons/react/solid';
 
 const projects = [
   {
-    name: 'Graph API',
+    name: 'Art',
     initials: 'GA',
     href: '#',
-    members: 16,
+    category: 16,
     bgColor: 'bg-pink-600',
   },
   {
-    name: 'Component Design',
+    name: 'Craft',
     initials: 'CD',
     href: '#',
-    members: 12,
+    category: 12,
     bgColor: 'bg-purple-600',
   },
   {
-    name: 'Templates',
+    name: 'Music',
     initials: 'T',
     href: '#',
-    members: 16,
+    category: 16,
     bgColor: 'bg-yellow-500',
   },
   {
-    name: 'React Components',
+    name: 'Technology',
     initials: 'RC',
     href: '#',
-    members: 8,
+    category: 8,
     bgColor: 'bg-green-500',
   },
 ];
@@ -67,7 +67,7 @@ export default function Category() {
                 >
                   {project.name}
                 </a>
-                <p className="text-gray-500">{project.members} Members</p>
+                <p className="text-gray-500">{project.category} Categories</p>
               </div>
               <div className="flex-shrink-0 pr-2">
                 <button
