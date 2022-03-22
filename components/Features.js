@@ -14,6 +14,8 @@ const actions = [
     icon: ClockIcon,
     iconForeground: 'text-teal-700',
     iconBackground: 'bg-teal-50',
+    description:
+      'Repetitive, interactive, lessons and rewards through structured practice.',
   },
   {
     title: 'Benefits',
@@ -21,6 +23,7 @@ const actions = [
     icon: BadgeCheckIcon,
     iconForeground: 'text-purple-700',
     iconBackground: 'bg-purple-50',
+    description: 'Repet, interactive, lessons and rewards.',
   },
   {
     title: 'One-on-one mentorship',
@@ -28,6 +31,7 @@ const actions = [
     icon: UsersIcon,
     iconForeground: 'text-sky-700',
     iconBackground: 'bg-sky-50',
+    description: 'Repetitive, inte, lessons and rewards.',
   },
   {
     title: 'Real world Reward',
@@ -35,6 +39,7 @@ const actions = [
     icon: CashIcon,
     iconForeground: 'text-yellow-700',
     iconBackground: 'bg-yellow-50',
+    description: 'Repetitive, interactive, and rewards.',
   },
   {
     title: 'Level up your skills',
@@ -42,6 +47,7 @@ const actions = [
     icon: ReceiptRefundIcon,
     iconForeground: 'text-rose-700',
     iconBackground: 'bg-rose-50',
+    description: 'Repetitive, interactive, lessons and .',
   },
   {
     title: 'Training',
@@ -49,6 +55,7 @@ const actions = [
     icon: AcademicCapIcon,
     iconForeground: 'text-indigo-700',
     iconBackground: 'bg-indigo-50',
+    description: 'Repetitive, interactive,wards.',
   },
 ];
 
@@ -93,10 +100,7 @@ export default function Example() {
                 {action.title}
               </a>
             </h3>
-            <p className="mt-2 text-sm text-gray-500">
-              Doloribus dolores nostrum quia qui natus officia quod et dolorem.
-              Sit repellendus qui ut at blanditiis et quo et molestiae.
-            </p>
+            <p className="mt-2 text-sm text-gray-500">{action.description}</p>
           </div>
           <span
             className="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400"
