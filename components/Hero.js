@@ -16,6 +16,7 @@ import {
   XIcon,
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
+import Category from './Categories';
 
 const features = [
   {
@@ -146,6 +147,7 @@ export default function Hero() {
             <source src="/images/tutvideo.mp4" />
           </video>
         </div>
+        <Category />
       </main>
     </div>
   );
