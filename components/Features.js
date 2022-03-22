@@ -9,7 +9,7 @@ import {
 
 const actions = [
   {
-    title: 'Request time off',
+    title: 'Gamified Learning',
     href: '#',
     icon: ClockIcon,
     iconForeground: 'text-teal-700',
@@ -23,21 +23,21 @@ const actions = [
     iconBackground: 'bg-purple-50',
   },
   {
-    title: 'Schedule a one-on-one',
+    title: 'One-on-one mentorship',
     href: '#',
     icon: UsersIcon,
     iconForeground: 'text-sky-700',
     iconBackground: 'bg-sky-50',
   },
   {
-    title: 'Payroll',
+    title: 'Real world Reward',
     href: '#',
     icon: CashIcon,
     iconForeground: 'text-yellow-700',
     iconBackground: 'bg-yellow-50',
   },
   {
-    title: 'Submit an expense',
+    title: 'Level up your skills',
     href: '#',
     icon: ReceiptRefundIcon,
     iconForeground: 'text-rose-700',
