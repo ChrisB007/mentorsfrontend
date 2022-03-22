@@ -15,10 +15,10 @@ const actions = [
     iconForeground: 'text-teal-700',
     iconBackground: 'bg-teal-50',
     description:
-      'Repetitive, interactive, lessons and rewards through structured practice.',
+      'Practice, practice, practice. Whether you’re a beginner trying to learn something new or an expert trying to up-skill, we’ll help you learn faster and more efficiently through repetitive, interactive, and structured lesson plans.',
   },
   {
-    title: 'Benefits',
+    title: 'Detailed Learning',
     href: '#',
     icon: BadgeCheckIcon,
     iconForeground: 'text-purple-700',
@@ -100,7 +100,7 @@ export default function Example() {
                 {action.title}
               </a>
             </h3>
-            <p className="mt-2 text-sm text-gray-500">{action.description}</p>
+            <p className="mt-2 text-lg text-gray-700">{action.description}</p>
           </div>
           <span
             className="pointer-events-none absolute top-6 right-6 text-gray-300 group-hover:text-gray-400"
