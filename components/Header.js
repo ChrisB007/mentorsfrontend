@@ -93,7 +93,7 @@ function classNames(...classes) {
 
 export default function Header() {
   return (
-    <Popover className="relative bg-slate-300">
+    <Popover className="relative bg-slate-300 sticky top-0 z-10">
       <div
         className="absolute inset-0 shadow z-30 pointer-events-none"
         aria-hidden="true"
