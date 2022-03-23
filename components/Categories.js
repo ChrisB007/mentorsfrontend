@@ -38,7 +38,7 @@ function classNames(...classes) {
 
 export default function Category() {
   return (
-    <div className="max-w-7xl m-auto pb-3">
+    <div id="top-categories" className="max-w-7xl m-auto pb-3">
       <h2 className="text-gray-500 text-center text-xs font-medium uppercase tracking-wide">
         Top Categories
       </h2>

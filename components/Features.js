@@ -15,7 +15,7 @@ const actions = [
     iconForeground: 'text-teal-700',
     iconBackground: 'bg-teal-50',
     description:
-      'Practice, practice, practice. Whether you’re a beginner trying to learn something new or an expert trying to up-skill, we’ll help you learn faster and more efficiently through repetitive, interactive, and structured lesson plans.',
+      'Whether you’re a beginner trying to learn something new, intermediate or an expert trying to level up skills, our experts will help you learn faster and more efficiently through repetitive, interactive, and structured lesson plans so you can practice, practice, practice.',
   },
   {
     title: 'Detailed Learning',
@@ -23,7 +23,17 @@ const actions = [
     icon: BadgeCheckIcon,
     iconForeground: 'text-purple-700',
     iconBackground: 'bg-purple-50',
-    description: 'Repet, interactive, lessons and rewards.',
+    description:
+      'Better than tutorials or online lectures, our approach is to get all mentees started at level zero, and provide hands-on training as you progress through levels. Think of it as a video game, you will not advance further until you pass current level.',
+  },
+  {
+    title: 'Session Size',
+    href: '#',
+    icon: ReceiptRefundIcon,
+    iconForeground: 'text-rose-700',
+    iconBackground: 'bg-rose-50',
+    description:
+      'Each session is scheduled by hourly basis, and is not more than five mentees per mentor.',
   },
   {
     title: 'One-on-one mentorship',
@@ -31,23 +41,16 @@ const actions = [
     icon: UsersIcon,
     iconForeground: 'text-sky-700',
     iconBackground: 'bg-sky-50',
-    description: 'Repetitive, inte, lessons and rewards.',
+    description:
+      'We encourage you to seek help from other meetees in your session, but you can also schedule one-on-one mentorship sessions as you see fit with experts if you are struggling at any level.',
   },
   {
-    title: 'Real world Reward',
+    title: 'Challenges and Real-world Rewards',
     href: '#',
     icon: CashIcon,
     iconForeground: 'text-yellow-700',
     iconBackground: 'bg-yellow-50',
     description: 'Repetitive, interactive, and rewards.',
-  },
-  {
-    title: 'Level up your skills',
-    href: '#',
-    icon: ReceiptRefundIcon,
-    iconForeground: 'text-rose-700',
-    iconBackground: 'bg-rose-50',
-    description: 'Repetitive, interactive, lessons and .',
   },
   {
     title: 'Training',
@@ -63,7 +66,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Example() {
+export default function Features() {
   return (
     <div className="rounded-lg bg-gray-200 overflow-hidden divide-y divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px max-w-7xl m-auto shadow-md">
       {actions.map((action, actionIdx) => (

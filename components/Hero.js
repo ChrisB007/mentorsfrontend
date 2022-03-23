@@ -110,16 +110,16 @@ export default function Hero() {
             </h2>
             <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
               We believe that the one true way to becoming a master is by
-              practicing. That is why we put emphasis on it. As the saying goes
-              - &ldquo;Practice makes perfect.&ldquo;
+              practicing. That is why we put a lot of emphasis on it, and as the
+              saying goes - &ldquo;Practice makes perfect.&ldquo;
             </p>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
                 <a
-                  href="#"
+                  href="#top-categories"
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 md:py-4 md:text-lg md:px-10"
                 >
-                  Get started for free
+                  Find our more
                 </a>
               </div>
               <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">

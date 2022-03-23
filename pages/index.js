@@ -8,7 +8,10 @@ export default function Home() {
     <div className="">
       <Head>
         <title>Mentors Parlor</title>
-        <meta name="description" content="Mentors Parlor" />
+        <meta
+          name="description"
+          content="Upskill or Learn new skills by practicing with mentors"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
