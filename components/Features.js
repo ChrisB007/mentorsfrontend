@@ -24,7 +24,7 @@ const actions = [
     iconForeground: 'text-purple-700',
     iconBackground: 'bg-purple-50',
     description:
-      'Better than tutorials or online lectures, our approach is to get all mentees started at level zero, and provide hands-on training as you progress through levels. Think of it as a video game, you will not advance further until you pass current level.',
+      'Better than tutorials or online lectures, our approach is to get all mentees started at level zero, encourage repetition to solidify learning, and provide hands-on training as you progress through levels. Think of it as a video game, you will not advance further until you pass current level.',
   },
   {
     title: 'Session Size',
@@ -33,7 +33,7 @@ const actions = [
     iconForeground: 'text-rose-700',
     iconBackground: 'bg-rose-50',
     description:
-      'Each session is scheduled by hourly basis, and is not more than five mentees per mentor.',
+      'Each session is scheduled on hourly basis, and is not more than five mentees per mentor.',
   },
   {
     title: 'One-on-one mentorship',
@@ -42,7 +42,7 @@ const actions = [
     iconForeground: 'text-sky-700',
     iconBackground: 'bg-sky-50',
     description:
-      'We encourage you to seek help from other meetees in your session, but you can also schedule one-on-one mentorship sessions as you see fit with experts if you are struggling at any level.',
+      'While we encourage you to seek help from other mentees in your session, you can also schedule one-on-one mentorship sessions as you see fit with experts if you are struggling at any level.',
   },
   {
     title: 'Challenges and Real-world Rewards',
