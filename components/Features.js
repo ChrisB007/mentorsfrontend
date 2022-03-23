@@ -68,7 +68,10 @@ function classNames(...classes) {
 
 export default function Features() {
   return (
-    <div className="rounded-lg bg-gray-200 overflow-hidden divide-y divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px max-w-7xl m-auto shadow-md">
+    <div
+      id="top-category"
+      className="rounded-lg bg-gray-200 overflow-hidden divide-y divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px max-w-7xl m-auto shadow-md"
+    >
       {actions.map((action, actionIdx) => (
         <div
           key={action.title}

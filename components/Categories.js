@@ -38,7 +38,7 @@ function classNames(...classes) {
 
 export default function Category() {
   return (
-    <div id="top-categories" className="max-w-7xl m-auto pb-3">
+    <div className="max-w-7xl m-auto pb-3">
       <h2 className="text-gray-500 text-center text-xs font-medium uppercase tracking-wide">
         Top Categories
       </h2>
@@ -69,7 +69,7 @@ export default function Category() {
                 </a>
                 <p className="text-gray-500">{project.category} Categories</p>
               </div>
-              <div className="flex-shrink-0 pr-2">
+              <div id="top-categories" className="flex-shrink-0 pr-2">
                 <button
                   type="button"
                   className="w-8 h-8 bg-white inline-flex items-center justify-center text-gray-400 rounded-full bg-transparent hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
