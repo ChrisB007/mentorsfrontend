@@ -15,7 +15,7 @@ const actions = [
     iconForeground: 'text-teal-700',
     iconBackground: 'bg-teal-50',
     description:
-      'Whether you’re a beginner trying to learn something new, intermediate or an expert trying to level up skills, our experts will help you learn faster and more efficiently through repetitive, interactive, and structured lesson plans so you can practice, practice, practice.',
+      'Whether you’re a beginner trying to learn something new, intermediate or an expert trying to level up skills, our mentors will help you learn faster and more efficiently through repetitive, interactive, and structured lesson plans so you can practice, practice, practice.',
   },
   {
     title: 'Detailed Learning',

@@ -2,8 +2,9 @@ import Head from 'next/head';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Category from '../components/Categories';
+import { getSession } from 'next-auth/react';
 
-export default function Home() {
+export default function Home({ session }) {
   return (
     <div className="">
       <Head>
@@ -22,4 +23,22 @@ export default function Home() {
       </main>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  if (session) {
+    return {
+      redirect: {
+        destination: '/dashboard',
+        permanent: false,
+      },
+    };
+  }
+  return {
+    props: {
+      session,
+    },
+  };
 }

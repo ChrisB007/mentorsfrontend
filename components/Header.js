@@ -92,7 +92,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Header() {
+export default function Header({ session }) {
   return (
     <Popover className="relative bg-slate-300 sticky top-0 z-10">
       <div
@@ -348,18 +348,22 @@ export default function Header() {
               </Popover>
             </Popover.Group>
             <div className="flex items-center md:ml-12">
-              <a
-                href="#"
-                className="text-base font-medium text-gray-500 hover:text-gray-900"
-              >
-                Sign in
-              </a>
-              <a
-                href="#"
-                className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700"
-              >
-                Sign up
-              </a>
+              {!session && (
+                <a
+                  href="/login"
+                  className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700"
+                >
+                  Get Access
+                </a>
+              )}
+              {session && (
+                <a
+                  href="/"
+                  className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700"
+                >
+                  Sign Out
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -469,19 +473,23 @@ export default function Header() {
                   Contact Sales
                 </a>
               </div>
-              <div className="mt-6">
-                <a
-                  href="#"
-                  className="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700"
-                >
-                  Sign up
-                </a>
-                <p className="mt-6 text-center text-base font-medium text-gray-500">
-                  Existing customer?{' '}
-                  <a href="#" className="text-indigo-600 hover:text-indigo-500">
-                    Sign in
+              <div className="flex items-center md:ml-12">
+                {!session && (
+                  <a
+                    href="/login"
+                    className="text-base font-medium text-gray-500 hover:text-gray-900"
+                  >
+                    Get Access
                   </a>
-                </p>
+                )}
+                {session && (
+                  <a
+                    href="/"
+                    className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700"
+                  >
+                    Sign Out
+                  </a>
+                )}
               </div>
             </div>
           </div>
