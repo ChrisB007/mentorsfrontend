@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { Popover, Transition } from '@headlessui/react';
 import Link from 'next/link';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import {
   BookmarkAltIcon,
   BriefcaseIcon,
@@ -21,6 +22,7 @@ import {
   XIcon,
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
+import Image from 'next/image';
 
 const solutions = [
   {
@@ -92,9 +94,12 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Header({ session }) {
+export default function Header() {
+  const { data: session } = useSession();
+  const user = session?.user;
+
   return (
-    <Popover className="relative bg-slate-300 sticky top-0 z-10">
+    <Popover className=" bg-slate-300 sticky top-0 z-10">
       <div
         className="absolute inset-0 shadow z-30 pointer-events-none"
         aria-hidden="true"
@@ -347,20 +352,34 @@ export default function Header({ session }) {
                 )}
               </Popover>
             </Popover.Group>
+
             <div className="flex items-center md:ml-12">
-              {!session && (
-                <Link href="/login">
-                  <a className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700">
-                    Get Access
-                  </a>
-                </Link>
-              )}
-              {session && (
-                <Link href="/dashboard">
-                  <a className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700">
-                    Sign Out
-                  </a>
-                </Link>
+              {session ? (
+                <>
+                  <span className="flex justify-center items-center space-x-3 px-3">
+                    <p>{`Hello ${user.name}`}</p>
+                    <Image
+                      src={user.image}
+                      alt="logo"
+                      className="h-8 w-8 rounded-full"
+                      width={38}
+                      height={38}
+                    />
+                  </span>
+                  <button
+                    onClick={signOut}
+                    className="text-base font-medium text-gray-500 hover:text-gray-900"
+                  >
+                    signOut
+                  </button>
+                </>
+              ) : (
+                <button
+                  onClick={signIn}
+                  className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700"
+                >
+                  Get Access
+                </button>
               )}
             </div>
           </div>
@@ -472,19 +491,20 @@ export default function Header({ session }) {
                 </a>
               </div>
               <div className="flex items-center md:ml-12">
-                {!session && (
-                  <Link href="/login">
-                    <a className="text-base font-medium text-gray-500 hover:text-gray-900">
-                      Get Access
-                    </a>
-                  </Link>
-                )}
-                {session && (
-                  <Link href="/dashboard">
-                    <a className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700">
-                      Sign Out
-                    </a>
-                  </Link>
+                {session ? (
+                  <button
+                    onClick={signOut}
+                    className="text-base font-medium text-gray-500 hover:text-gray-900"
+                  >
+                    signOut
+                  </button>
+                ) : (
+                  <button
+                    onClick={signIn}
+                    className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700"
+                  >
+                    Get Access
+                  </button>
                 )}
               </div>
             </div>

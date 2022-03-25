@@ -1,5 +1,6 @@
 import { DotsVerticalIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const projects = [
   {
@@ -7,28 +8,32 @@ const projects = [
     initials: 'GA',
     href: '/categories/art',
     category: 16,
-    bgColor: 'bg-pink-600',
+    bgColor: 'bg-teal-600',
+    icon: 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-art-online-education-flaticons-lineal-color-flat-icons.png',
   },
   {
     name: 'Craft',
     initials: 'CD',
     href: '/categories/craft',
     category: 12,
-    bgColor: 'bg-purple-600',
+    bgColor: 'bg-red-600',
+    icon: 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-craft-edutainment-flaticons-lineal-color-flat-icons.png',
   },
   {
     name: 'Music',
     initials: 'T',
     href: '/categories/music',
     category: 16,
-    bgColor: 'bg-yellow-500',
+    bgColor: 'bg-zinc-100',
+    icon: 'https://img.icons8.com/office/16/000000/maracas.png',
   },
   {
     name: 'Technology',
     initials: 'RC',
     href: '/categories/tech',
     category: 8,
-    bgColor: 'bg-green-500',
+    bgColor: 'bg-amber-500',
+    icon: 'https://img.icons8.com/dusk/64/000000/computer.png',
   },
 ];
 
@@ -60,7 +65,12 @@ export default function Category() {
                       'flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-l-md',
                     )}
                   >
-                    {project.initials}
+                    <Image
+                      src={project.icon}
+                      alt={project.name}
+                      width="25"
+                      height="25"
+                    />
                   </div>
                   <div className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
                     <div className="flex-1 px-4 py-2 text-sm truncate">

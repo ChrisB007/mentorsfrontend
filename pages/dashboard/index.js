@@ -1,7 +1,14 @@
-import React from 'react';
+import { useSession } from 'next-auth/react';
+import Home from '..';
+import Mentors from '../../components/mentors';
 
-const Dashboard = () => {
-  return <div>Dashboard</div>;
+const index = () => {
+  const { data: session } = useSession();
+  return (
+    <div>
+      <Mentors />
+    </div>
+  );
 };
 
-export default Dashboard;
+export default index;
