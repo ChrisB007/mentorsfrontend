@@ -9,6 +9,14 @@ import {
 
 const actions = [
   {
+    title: 'Training',
+    href: '#',
+    icon: AcademicCapIcon,
+    iconForeground: 'text-indigo-700',
+    iconBackground: 'bg-indigo-50',
+    description: 'Repetitive, interactive,wards.',
+  },
+  {
     title: 'Gamified Learning',
     href: '#',
     icon: ClockIcon,
@@ -51,14 +59,6 @@ const actions = [
     iconForeground: 'text-yellow-700',
     iconBackground: 'bg-yellow-50',
     description: 'Repetitive, interactive, and rewards.',
-  },
-  {
-    title: 'Training',
-    href: '#',
-    icon: AcademicCapIcon,
-    iconForeground: 'text-indigo-700',
-    iconBackground: 'bg-indigo-50',
-    description: 'Repetitive, interactive,wards.',
   },
 ];
 

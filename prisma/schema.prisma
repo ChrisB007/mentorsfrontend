@@ -103,13 +103,31 @@ model Category {
 }
 
 model Subcategory {
-      id         Int       @id @default(autoincrement())
-      name       String    @db.VarChar(255)
-      category   Category  @relation(fields: [categoryId], references: [id])
-      createdAt  DateTime  @default(now())
-      updatedAt  DateTime  @updatedAt
-      categoryId Int
-      Program    Program[]
+      id          Int       @id @default(autoincrement())
+      name        String    @db.VarChar(255)
+      description String
+      icon        String?
+      url         String
+      category    Category  @relation(fields: [categoryId], references: [id])
+      sub         Sub[]
+      createdAt   DateTime  @default(now())
+      updatedAt   DateTime  @updatedAt
+      categoryId  Int
+      Program     Program[]
+      subId       Int
+}
+
+model Sub {
+      id            Int          @id @default(autoincrement())
+      name          String       @db.VarChar(255)
+      description   String
+      icon          String?
+      url           String
+      createdAt     DateTime     @default(now())
+      updatedAt     DateTime     @updatedAt
+      categoryId    Int
+      Subcategory   Subcategory? @relation(fields: [subcategoryId], references: [id])
+      subcategoryId Int?
 }
 
 model Sales {
