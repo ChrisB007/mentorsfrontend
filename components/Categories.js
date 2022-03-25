@@ -8,7 +8,7 @@ const projects = [
     initials: 'GA',
     href: '/categories/art',
     category: 16,
-    bgColor: 'bg-teal-600',
+    bgColor: 'bg-teal-600/100',
     icon: 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-art-online-education-flaticons-lineal-color-flat-icons.png',
   },
   {
@@ -16,7 +16,7 @@ const projects = [
     initials: 'CD',
     href: '/categories/craft',
     category: 12,
-    bgColor: 'bg-red-600',
+    bgColor: 'bg-rose-400',
     icon: 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-craft-edutainment-flaticons-lineal-color-flat-icons.png',
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     initials: 'T',
     href: '/categories/music',
     category: 16,
-    bgColor: 'bg-zinc-100',
+    bgColor: 'bg-sky-500/100',
     icon: 'https://img.icons8.com/office/16/000000/maracas.png',
   },
   {

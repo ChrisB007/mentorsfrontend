@@ -3,10 +3,10 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Category from '../components/Categories';
 import { getSession } from 'next-auth/react';
-import Mentors from '../components/mentors';
+import Dashboard from './dashboard';
 
 export default function Home({ session }) {
-  console.log('SESS', session);
+  console.log(session);
   if (!session) {
     return (
       <div className="">
@@ -28,14 +28,11 @@ export default function Home({ session }) {
       </div>
     );
   }
-
-  console.log('LOOOOO', session);
-  return <Mentors />;
+  return <Dashboard />;
 }
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
-  console.log('SESS00', session);
   return {
     props: {
       session,
