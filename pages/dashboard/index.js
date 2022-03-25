@@ -2,7 +2,7 @@ import { useSession } from 'next-auth/react';
 import Home from '..';
 import Mentors from '../../components/mentors';
 
-const index = () => {
+const Index = () => {
   const { data: session } = useSession();
   return (
     <div>
@@ -11,4 +11,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

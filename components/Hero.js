@@ -104,7 +104,7 @@ export default function Hero() {
               <span className="block xl:inline">Learn by Practicing</span>
             </h1>
             <h2>
-              <span className="text-4xl font-bold text-lime-600">
+              <span className="text-4xl font-bold text-pink-700">
                 with expert Mentors
               </span>
             </h2>
