@@ -107,7 +107,7 @@ export default function Header() {
       <div className="relative z-20">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-5 sm:px-6 sm:py-4 lg:px-8 md:justify-start md:space-x-10">
           <div>
-            <Link href="/">
+            <Link href={session ? '/dashboard' : '/'}>
               <a className="flex">
                 <span className="sr-only">Header</span>
                 <img
@@ -374,12 +374,11 @@ export default function Header() {
                   </button>
                 </>
               ) : (
-                <button
-                  onClick={signIn}
-                  className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700"
-                >
-                  Get Access
-                </button>
+                <Link href="/login">
+                  <a className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700">
+                    Get Access
+                  </a>
+                </Link>
               )}
             </div>
           </div>
@@ -499,12 +498,11 @@ export default function Header() {
                     signOut
                   </button>
                 ) : (
-                  <button
-                    onClick={signIn}
-                    className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700"
-                  >
-                    Get Access
-                  </button>
+                  <Link href="/login">
+                    <a className="ml-8 inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-gray-600 hover:bg-gray-700">
+                      Get Access
+                    </a>
+                  </Link>
                 )}
               </div>
             </div>

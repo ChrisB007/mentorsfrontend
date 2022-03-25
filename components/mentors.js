@@ -92,7 +92,6 @@ function classNames(...classes) {
 export default function Mentors() {
   const { data: session, loading } = useSession();
   const user = session?.user;
-  console.log('dASH', session);
   return (
     <>
       <div className="min-h-full">
@@ -102,13 +101,13 @@ export default function Mentors() {
             <div className="flex items-center space-x-5">
               <div className="flex-shrink-0">
                 <div className="relative">
-                  {/*<Image
+                  <Image
                     className="h-16 w-16 rounded-full"
                     src={user.image}
                     alt="user.name"
                     width="48"
                     height="48"
-                  />*/}
+                  />
                   <span
                     className="absolute inset-0 shadow-inner rounded-full"
                     aria-hidden="true"
@@ -117,7 +116,7 @@ export default function Mentors() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">
-                  Ricardo Cooper
+                  {user.name}
                 </h1>
                 <p className="text-sm font-medium text-gray-500">
                   Applied for{' '}

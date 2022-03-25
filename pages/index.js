@@ -2,13 +2,10 @@ import Head from 'next/head';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Category from '../components/Categories';
-import { getSession } from 'next-auth/react';
-import Dashboard from './dashboard';
 
-export default function Home({ session }) {
-  console.log(session);
-  if (!session) {
-    return (
+export default function Home() {
+  return (
+    <>
       <div className="">
         <Head>
           <title>Mentors Parlor</title>
@@ -26,16 +23,6 @@ export default function Home({ session }) {
           </main>
         </div>
       </div>
-    );
-  }
-  return <Dashboard />;
-}
-
-export async function getServerSideProps(context) {
-  const session = await getSession(context);
-  return {
-    props: {
-      session,
-    },
-  };
+    </>
+  );
 }

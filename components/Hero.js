@@ -109,9 +109,9 @@ export default function Hero() {
               </span>
             </h2>
             <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-              We believe that the one true way to becoming a master at anything
-              is by practicing, lots of practicing. &ldquo;Practice makes
-              perfect&ldquo; as the saying goes. Begin your journey today.
+              &ldquo;Practice makes perfect&ldquo; they say, and we agree. One
+              true way to becoming a master at anything is by practicing, lots
+              of practicing. Start practicing today.
             </p>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
