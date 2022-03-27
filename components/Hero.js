@@ -111,11 +111,12 @@ export default function Hero() {
             <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
               &ldquo;Practice makes perfect&ldquo; as the saying goes, and we
               agree 100%. One true way to becoming a master at anything is by
-              practicing, lots of practicing. That's why we have employed the{' '}
+              practicing, lots of practicing. That's why we have employed
+              the&nbsp;
               <span class="underline decoration-pink-500">
                 7–3–2–1 learning method
-              </span>{' '}
-              as part of our solution.
+              </span>
+              &nbsp; as part of our solution.
             </p>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
