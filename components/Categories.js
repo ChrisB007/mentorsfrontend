@@ -26,12 +26,7 @@ export default function Category() {
                   key={project.name}
                   className="col-span-1 flex shadow-sm rounded-md cursor-pointer "
                 >
-                  <div
-                    className={classNames(
-                      project.bgColor,
-                      'flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-l-md',
-                    )}
-                  >
+                  <div className="bg-gradient-to-r from-slate-200 to-white flex-shrink-0 flex items-center justify-center w-16 text-white text-sm font-medium rounded-l-md border border-slate-100">
                     <Image
                       src={project.icon}
                       alt={project.name}
