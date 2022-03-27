@@ -26,20 +26,19 @@ import Image from 'next/image';
 
 const solutions = [
   {
-    name: 'Analytics',
-    description:
-      'Get a better understanding of where your traffic is coming from.',
+    name: 'Mentor for us',
+    description: 'Get paid mentoring for us.',
     href: '#',
     icon: ChartBarIcon,
   },
   {
-    name: 'Engagement',
-    description: 'Speak directly to your customers in a more meaningful way.',
+    name: 'Individual Mentor',
+    description: 'Speak.',
     href: '#',
     icon: CursorClickIcon,
   },
   {
-    name: 'Security',
+    name: 'Group Mentor',
     description: "Your customers' data will be safe and secure.",
     href: '#',
     icon: ShieldCheckIcon,
@@ -119,7 +118,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="-mr-2 -my-2 md:hidden">
-            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+            <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-stone-500">
               <span className="sr-only">Open menu</span>
               <MenuIcon className="h-6 w-6" aria-hidden="true" />
             </Popover.Button>
@@ -132,7 +131,7 @@ export default function Header() {
                     <Popover.Button
                       className={classNames(
                         open ? 'text-gray-900' : 'text-gray-500',
-                        'group  rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                        'group  rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-500',
                       )}
                     >
                       <span>Be a Mentor</span>
@@ -164,7 +163,7 @@ export default function Header() {
                             >
                               <div className="flex md:h-full lg:flex-col">
                                 <div className="flex-shrink-0">
-                                  <span className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-indigo-500 text-white sm:h-12 sm:w-12">
+                                  <span className="inline-flex items-center justify-center h-10 w-10 rounded-md bg-stone-500 text-white sm:h-12 sm:w-12">
                                     <item.icon
                                       className="h-6 w-6"
                                       aria-hidden="true"
@@ -180,7 +179,7 @@ export default function Header() {
                                       {item.description}
                                     </p>
                                   </div>
-                                  <p className="mt-2 text-sm font-medium text-indigo-600 lg:mt-4">
+                                  <p className="mt-2 text-sm font-medium text-stone-600 lg:mt-4">
                                     Learn more{' '}
                                     <span aria-hidden="true">&rarr;</span>
                                   </p>
@@ -230,7 +229,7 @@ export default function Header() {
                     <Popover.Button
                       className={classNames(
                         open ? 'text-gray-900' : 'text-gray-500',
-                        'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+                        'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-500',
                       )}
                     >
                       <span>More</span>
@@ -337,7 +336,7 @@ export default function Header() {
                             <div className="mt-6 text-sm font-medium">
                               <a
                                 href="#"
-                                className="text-indigo-600 hover:text-indigo-500"
+                                className="text-stone-600 hover:text-stone-500"
                               >
                                 {' '}
                                 View all posts{' '}
@@ -409,7 +408,7 @@ export default function Header() {
                   />
                 </div>
                 <div className="-mr-2">
-                  <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-stone-500">
                     <span className="sr-only">Close menu</span>
                     <XIcon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
@@ -436,7 +435,7 @@ export default function Header() {
                   <div className="mt-8 text-base">
                     <a
                       href="#"
-                      className="font-medium text-indigo-600 hover:text-indigo-500"
+                      className="font-medium text-stone-600 hover:text-stone-500"
                     >
                       {' '}
                       View all products <span aria-hidden="true">&rarr;</span>

@@ -1,41 +1,8 @@
 import { DotsVerticalIcon } from '@heroicons/react/solid';
 import Link from 'next/link';
 import Image from 'next/image';
-
-const projects = [
-  {
-    name: 'Art',
-    initials: 'GA',
-    href: '/categories/art',
-    category: 16,
-    bgColor: 'bg-teal-600/100',
-    icon: 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-art-online-education-flaticons-lineal-color-flat-icons.png',
-  },
-  {
-    name: 'Craft',
-    initials: 'CD',
-    href: '/categories/craft',
-    category: 12,
-    bgColor: 'bg-rose-400',
-    icon: 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-craft-edutainment-flaticons-lineal-color-flat-icons.png',
-  },
-  {
-    name: 'Music',
-    initials: 'T',
-    href: '/categories/music',
-    category: 16,
-    bgColor: 'bg-sky-500/100',
-    icon: 'https://img.icons8.com/office/16/000000/maracas.png',
-  },
-  {
-    name: 'Technology',
-    initials: 'RC',
-    href: '/categories/tech',
-    category: 8,
-    bgColor: 'bg-amber-500',
-    icon: 'https://img.icons8.com/dusk/64/000000/computer.png',
-  },
-];
+import { PrismaClient } from '@prisma/client';
+import { data } from '../categoryData';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -51,9 +18,9 @@ export default function Category() {
         role="list"
         className="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 px-3"
       >
-        {projects.map((project) => (
+        {data.map((project) => (
           <>
-            <Link href={project.href} className="">
+            <Link href={project.url} className="">
               <a>
                 <li
                   key={project.name}
@@ -75,14 +42,12 @@ export default function Category() {
                   <div className="flex-1 flex items-center justify-between border-t border-r border-b border-gray-200 bg-white rounded-r-md truncate">
                     <div className="flex-1 px-4 py-2 text-sm truncate">
                       <a
-                        href={project.href}
+                        href={project.url}
                         className="text-gray-900 font-medium hover:text-gray-600"
                       >
                         {project.name}
                       </a>
-                      <p className="text-gray-500">
-                        {project.category} Categories
-                      </p>
+                      <p className="text-gray-500">Category</p>
                     </div>
                     <div id="top-categories" className="flex-shrink-0 pr-2">
                       <button

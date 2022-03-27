@@ -97,7 +97,11 @@ model Curriculum {
 model Category {
       id            Int           @id @default(autoincrement())
       name          String        @db.VarChar(255)
-      subcategories Subcategory[]
+      url           String        @db.VarChar(255)
+      icon          String?       @db.VarChar(255)
+      description   String?       @db.VarChar(255)
+      bgColor       String?       @db.VarChar(255)
+      subCategories Subcategory[]
       createdAt     DateTime      @default(now())
       updatedAt     DateTime      @updatedAt
 }
@@ -106,22 +110,23 @@ model Subcategory {
       id          Int       @id @default(autoincrement())
       name        String    @db.VarChar(255)
       description String
-      icon        String?
+      image       String?
+      bgColor     String?
       url         String
       category    Category  @relation(fields: [categoryId], references: [id])
       sub         Sub[]
-      createdAt   DateTime  @default(now())
-      updatedAt   DateTime  @updatedAt
       categoryId  Int
       Program     Program[]
       subId       Int
+      createdAt   DateTime  @default(now())
+      updatedAt   DateTime  @updatedAt
 }
 
 model Sub {
       id            Int          @id @default(autoincrement())
       name          String       @db.VarChar(255)
       description   String
-      icon          String?
+      image         String?
       url           String
       createdAt     DateTime     @default(now())
       updatedAt     DateTime     @updatedAt

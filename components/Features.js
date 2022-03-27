@@ -9,7 +9,7 @@ import {
 
 const actions = [
   {
-    title: 'Training',
+    title: 'Mentorship',
     href: '#',
     icon: AcademicCapIcon,
     iconForeground: 'text-indigo-700',
@@ -17,22 +17,22 @@ const actions = [
     description: 'Repetitive, interactive,wards.',
   },
   {
-    title: 'Gamified Learning',
+    title: 'Gamification',
     href: '#',
     icon: ClockIcon,
     iconForeground: 'text-teal-700',
     iconBackground: 'bg-teal-50',
     description:
-      'Whether you’re a beginner trying to learn something new, intermediate or an expert trying to level up skills, our mentors will help you learn faster and more efficiently through repetitive, interactive, and structured lesson plans so you can practice, practice, practice.',
+      'Whether you’re a beginner trying to learn something new, intermediate or an expert trying to level up skills, our mentors will help you learn faster and more efficiently through repetitive, interactive, and structured lesson plans that encourages you to practice, practice, practice.',
   },
   {
-    title: 'Detailed Learning',
+    title: 'Learning',
     href: '#',
     icon: BadgeCheckIcon,
     iconForeground: 'text-purple-700',
     iconBackground: 'bg-purple-50',
     description:
-      'Better than tutorials or online lectures, our approach is to get all mentees started at level zero, encourage repetition to solidify learning, and provide hands-on training as you progress through levels. Think of it as a video game, you will not advance further until you pass current level.',
+      'Better than tutorials or online lectures, our approach is to get all mentees started at level zero, encourage repetition to solidify learning, and provide hands-on training as you progress through levels. Think of it as a video game where you wont be able to advance further until you pass current level.',
   },
   {
     title: 'Session Size',
