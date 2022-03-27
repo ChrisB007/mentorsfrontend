@@ -113,7 +113,7 @@ export default function Hero() {
               agree 100%. One true way to becoming a master at anything is by
               practicing, lots of practicing. That&lsquo;s why we have employed
               the&nbsp;
-              <span class="underline decoration-pink-500">
+              <span className="underline decoration-pink-500">
                 7–3–2–1 learning method
               </span>
               &nbsp; as part of our solution.
