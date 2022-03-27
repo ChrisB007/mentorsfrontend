@@ -114,7 +114,7 @@ export default function Hero() {
               practicing, lots of practicing. That&lsquo;s why we have employed
               the&nbsp;
               <span className="underline decoration-pink-500">
-                7–3–2–1 learning method
+                7–3–2–1 method
               </span>
               &nbsp; as part of our solution.
             </p>

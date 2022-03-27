@@ -11,7 +11,7 @@ export default function Home() {
           <title>Mentors Parlor</title>
           <meta
             name="description"
-            content="Up-skill or Learn new skills by practicing with mentors"
+            content="Up-skill or Learn new skills by practicing in real-time with experienced mentors using the 7–3–2–1 method "
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>

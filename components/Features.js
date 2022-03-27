@@ -41,7 +41,7 @@ const actions = [
     iconForeground: 'text-rose-700',
     iconBackground: 'bg-rose-50',
     description:
-      'Each session is scheduled on hourly / daily / weekly basis, and is not more than five mentees per mentor. We require a weekly commitment of at least five hours per week to be successful.',
+      'Each session is scheduled on hourly / daily / weekly basis, and not more than five mentees per mentor. We require a weekly commitment of at least five hours per week to be successful.',
   },
   {
     title: 'One-on-one mentorship',
