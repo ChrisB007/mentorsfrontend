@@ -41,6 +41,7 @@ model User {
       email         String?   @unique
       emailVerified DateTime?
       image         String?
+      Role          Role
       accounts      Account[]
       sessions      Session[]
       Program       Program[]
@@ -96,8 +97,8 @@ model Curriculum {
 
 model Category {
       id            Int           @id @default(autoincrement())
-      name          String        @db.VarChar(255)
-      url           String        @db.VarChar(255)
+      name          String?       @db.VarChar(255)
+      url           String?       @db.VarChar(255)
       icon          String?       @db.VarChar(255)
       description   String?       @db.VarChar(255)
       bgColor       String?       @db.VarChar(255)
@@ -107,31 +108,30 @@ model Category {
 }
 
 model Subcategory {
-      id          Int       @id @default(autoincrement())
-      name        String    @db.VarChar(255)
-      description String
-      image       String?
-      bgColor     String?
-      url         String
-      category    Category  @relation(fields: [categoryId], references: [id])
-      sub         Sub[]
-      categoryId  Int
-      Program     Program[]
-      subId       Int
-      createdAt   DateTime  @default(now())
-      updatedAt   DateTime  @updatedAt
+      id              Int       @id @default(autoincrement())
+      sub_name        String?   @db.VarChar(255)
+      sub_description String?
+      sub_image       String?
+      sub_url         String?
+      category        Category  @relation(fields: [categoryId], references: [id])
+      sub             Sub[]
+      categoryId      Int
+      subId           Int?
+      createdAt       DateTime  @default(now())
+      updatedAt       DateTime  @updatedAt
+      Program         Program[]
 }
 
 model Sub {
       id            Int          @id @default(autoincrement())
-      name          String       @db.VarChar(255)
-      description   String
+      name          String?      @db.VarChar(255)
+      description   String?
       image         String?
-      url           String
+      url           String?
       createdAt     DateTime     @default(now())
       updatedAt     DateTime     @updatedAt
       categoryId    Int
-      Subcategory   Subcategory? @relation(fields: [subcategoryId], references: [id])
+      category      Subcategory? @relation(fields: [subcategoryId], references: [id])
       subcategoryId Int?
 }
 
@@ -140,4 +140,10 @@ model Sales {
       email     String   @db.VarChar(255)
       createdAt DateTime @default(now())
       updatedAt DateTime @updatedAt
+}
+
+enum Role {
+      ADMIN
+      MENTOR
+      MENTEE
 }

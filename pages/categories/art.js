@@ -1,13 +1,32 @@
-import axios from 'axios';
+import { PrismaClient } from '@prisma/client';
+import req from 'express/lib/request';
+//import prisma from '../../lib/prisma';
 
-const Art = () => {
+//const prisma = new PrismaClient();
+
+const Art = ({ data }) => {
   return <div>Art</div>;
 };
 
 export async function getServerSideProps(context) {
-  //  const artData =
+  if (req.method === 'GET') {
+    try {
+      // Get all subCategories
+      const subCategories = await prisma.subCategory.findMany();
+      return {
+        props: {
+          subCategories,
+        },
+      };
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return {
-    props: {},
+    props: {
+      subCategories: [],
+    },
   };
 }
 

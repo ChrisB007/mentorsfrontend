@@ -2,7 +2,6 @@ export const data = [
   {
     name: 'Art',
     url: '/categories/art',
-    bgColor: 'bg-teal-600/100',
     description:
       'Art is the study of the principles of aesthetics and the principles of beauty.',
     icon: 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-art-online-education-flaticons-lineal-color-flat-icons.png',
@@ -54,7 +53,6 @@ export const data = [
     url: '/categories/craft',
     description:
       'Crafts is an art, trade, or occupation requiring special skill, especially manual skill.',
-    bgColor: 'bg-rose-400',
     icon: 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-craft-edutainment-flaticons-lineal-color-flat-icons.png',
     subCategories: [
       {
@@ -95,7 +93,6 @@ export const data = [
     name: 'Music',
     url: '/categories/music',
     description: 'Music is a form of art that uses sound organised in time.',
-    bgColor: 'bg-sky-500/100',
     icon: 'https://img.icons8.com/office/16/000000/maracas.png',
     subCategories: [
       {
@@ -137,7 +134,6 @@ export const data = [
     url: '/categories/tech',
     description:
       'Technology is the continually developing result of accumulated knowledge and application in all techniques, skills, methods, and processes used in industrial production and scientific research',
-    bgColor: 'bg-amber-500',
     icon: 'https://img.icons8.com/dusk/64/000000/computer.png',
     subCategories: [
       {
@@ -186,7 +182,6 @@ export const data = [
         name: 'Computer Programming',
         description: 'Find mentor in Computer Programming',
         image: 'drawing',
-        bgColor: 'bg-indigo-500',
         url: '/programming',
         category: 'Technology',
         sub: [

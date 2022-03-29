@@ -14,7 +14,8 @@ const actions = [
     icon: AcademicCapIcon,
     iconForeground: 'text-indigo-700',
     iconBackground: 'bg-indigo-50',
-    description: 'Repetitive, interactive,wards.',
+    description:
+      'As mentees, you will be guided along the way by highly skilled, vetted mentors from all works of life to help get the most value out of your time and effort through structured program and concepts that will help hone your skill over a short period of time.',
   },
   {
     title: 'Gamification',
@@ -58,7 +59,8 @@ const actions = [
     icon: CashIcon,
     iconForeground: 'text-yellow-700',
     iconBackground: 'bg-yellow-50',
-    description: 'Repetitive, interactive, and rewards.',
+    description:
+      'We believe in mentorship and want you to be successful on our platform. We have established partnerships with various companies to provide real-world rewards as you complete challenges on your plight to be a master.',
   },
 ];
 

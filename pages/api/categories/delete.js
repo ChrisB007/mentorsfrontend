@@ -1,14 +1,15 @@
 import { PrismaClient } from '@prisma/client';
 
-const Index = async (req, res) => {
+const Delete = async (req, res) => {
   const prisma = new PrismaClient();
+
   try {
-    const categories = await prisma.category.findMany({
-      include: {
-        subCategories: true,
+    const category = await prisma.category.delete({
+      where: {
+        id: req.params.id,
       },
     });
-    return res.status(200).json({ categories });
+    return res.status(200).json({ category });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error });
@@ -16,4 +17,5 @@ const Index = async (req, res) => {
     prisma.$disconnect();
   }
 };
-export default Index;
+
+export default Delete;
