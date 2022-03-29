@@ -32,7 +32,7 @@ const solutions = [
   {
     name: 'Do your own thing',
     description:
-      'Sell merch, set your schedules and rates when you provide mentorship as a subscription services to our users.',
+      'Sell merch, set your schedules and rates when you provide mentorship as subscription services to our users.',
     href: '#',
     icon: CursorClickIcon,
   },
@@ -435,7 +435,7 @@ export default function Header() {
                   href="#"
                   className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700"
                 >
-                  Docs
+                  Real world Initiatives
                 </a>
 
                 <a
