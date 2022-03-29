@@ -26,14 +26,14 @@ import Image from 'next/image';
 
 const solutions = [
   {
-    name: 'Mentor for us',
-    description: 'Get paid mentoring for us.',
+    name: 'Work for us',
+    description: 'Get paid to be a mentor.',
     href: '#',
     icon: ChartBarIcon,
   },
   {
-    name: 'Individual Mentor',
-    description: 'Speak.',
+    name: 'Do your own thing',
+    description: 'Make money by',
     href: '#',
     icon: CursorClickIcon,
   },
@@ -352,7 +352,7 @@ export default function Header() {
               </Popover>
             </Popover.Group>
 
-            <div className="flex items-center md:ml-12">
+            {/*<div className="flex items-center md:ml-12">
               {session ? (
                 <>
                   <span className="flex justify-center items-center space-x-3 px-3">
@@ -379,7 +379,7 @@ export default function Header() {
                   </a>
                 </Link>
               )}
-            </div>
+            </div>*/}
           </div>
         </div>
       </div>
@@ -488,7 +488,7 @@ export default function Header() {
                   Contact Sales
                 </a>
               </div>
-              <div className="flex items-center md:ml-12">
+              {/*<div className="flex items-center md:ml-12">
                 {session ? (
                   <button
                     onClick={signOut}
@@ -503,7 +503,7 @@ export default function Header() {
                     </a>
                   </Link>
                 )}
-              </div>
+              </div>*/}
             </div>
           </div>
         </Popover.Panel>
