@@ -199,7 +199,7 @@ export default function Header() {
                 href="#"
                 className="text-base font-medium text-gray-500 hover:text-gray-900"
               >
-                Docs
+                Real world Initiatives
               </a>
               <Popover>
                 {({ open }) => (
