@@ -13,7 +13,7 @@ export default function Hero() {
             </h1>
             <h2>
               <span className="text-4xl font-bold text-pink-700">
-                with expert Mentors
+                with Mentors
               </span>
             </h2>
             <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">

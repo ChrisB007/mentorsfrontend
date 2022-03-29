@@ -14,31 +14,30 @@ import {
   MenuIcon,
   NewspaperIcon,
   OfficeBuildingIcon,
-  PhoneIcon,
-  PlayIcon,
   ShieldCheckIcon,
   UserGroupIcon,
   ViewGridIcon,
   XIcon,
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
-import Image from 'next/image';
 
 const solutions = [
   {
     name: 'Work for us',
-    description: 'Get paid to be a mentor.',
+    description:
+      'We are always looking for experienced individuals to join our team and provide mentorship to users. We are hiring.',
     href: '#',
     icon: ChartBarIcon,
   },
   {
     name: 'Do your own thing',
-    description: 'Make money by',
+    description:
+      'Sell merch, set your schedules and rates when you provide mentorship as a subscription services to our users.',
     href: '#',
     icon: CursorClickIcon,
   },
   {
-    name: 'Group Mentor',
+    name: 'Teams',
     description: "Your customers' data will be safe and secure.",
     href: '#',
     icon: ShieldCheckIcon,
@@ -49,11 +48,6 @@ const solutions = [
     href: '#',
     icon: ViewGridIcon,
   },
-];
-const callsToAction = [
-  { name: 'Watch Demo', href: '#', icon: PlayIcon },
-  { name: 'View All Products', href: '#', icon: CheckCircleIcon },
-  { name: 'Contact Sales', href: '#', icon: PhoneIcon },
 ];
 const company = [
   { name: 'About', href: '#', icon: InformationCircleIcon },
@@ -134,7 +128,7 @@ export default function Header() {
                         'group  rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-500',
                       )}
                     >
-                      <span>Be a Mentor</span>
+                      <span>Be our Mentor</span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? 'text-gray-600' : 'text-gray-400',
@@ -187,24 +181,6 @@ export default function Header() {
                               </div>
                             </a>
                           ))}
-                        </div>
-                        <div className="bg-gray-50">
-                          <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
-                            {callsToAction.map((item) => (
-                              <div key={item.name} className="flow-root">
-                                <a
-                                  href={item.href}
-                                  className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100"
-                                >
-                                  <item.icon
-                                    className="flex-shrink-0 h-6 w-6 text-gray-400"
-                                    aria-hidden="true"
-                                  />
-                                  <span className="ml-3">{item.name}</span>
-                                </a>
-                              </div>
-                            ))}
-                          </div>
                         </div>
                       </Popover.Panel>
                     </Transition>
