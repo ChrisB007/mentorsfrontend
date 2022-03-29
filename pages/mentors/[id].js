@@ -1,4 +1,6 @@
-import prisma from '../../lib/prisma';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
 
 const Details = () => {
   return <div>Details</div>;

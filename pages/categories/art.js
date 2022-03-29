@@ -1,8 +1,6 @@
 import { PrismaClient } from '@prisma/client';
-import req from 'express/lib/request';
-//import prisma from '../../lib/prisma';
 
-//const prisma = new PrismaClient();
+const prisma = new PrismaClient();
 
 const Art = ({ data }) => {
   return <div>Art</div>;
