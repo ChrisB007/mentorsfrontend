@@ -42,7 +42,7 @@ const actions = [
     iconForeground: 'text-rose-700',
     iconBackground: 'bg-rose-50',
     description:
-      'Each session is scheduled on hourly / daily / weekly basis, and not more than five mentees per mentor. We require a weekly commitment of at least five hours per week to be successful.',
+      'Each session is scheduled on a weekly basis, and not more than five mentees per mentor. We require a weekly commitment of at least five hours per week to be successful.',
   },
   {
     title: 'One-on-one mentorship',
@@ -60,7 +60,7 @@ const actions = [
     iconForeground: 'text-yellow-700',
     iconBackground: 'bg-yellow-50',
     description:
-      'We believe in mentorship and want you to be successful on our platform. We have established partnerships with various companies to provide real-world rewards as you complete challenges on your plight to be a master.',
+      'We have established partnerships with various companies to provide real-world (free) rewards to encourage you as you complete challenges on your plight to becoming a master.',
   },
 ];
 
