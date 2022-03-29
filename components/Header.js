@@ -25,7 +25,7 @@ const solutions = [
   {
     name: 'Work for us',
     description:
-      'We are always looking for experienced individuals to join our team and provide mentorship to users. We are hiring.',
+      'We are always looking for experienced individuals to join our team and provide mentorship to users. We are hiring full-time mentors.',
     href: '#',
     icon: ChartBarIcon,
   },
@@ -45,7 +45,8 @@ const solutions = [
   },
   {
     name: 'Integrations',
-    description: "Connect with third-party tools that you're already using.",
+    description:
+      'We have integrated third-party tools for you to connect and use in your sessions to help your mentees succeed.',
     href: '#',
     icon: ViewGridIcon,
   },
@@ -209,7 +210,7 @@ export default function Header() {
                         'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-500',
                       )}
                     >
-                      <span>More</span>
+                      <span>More about us</span>
                       <ChevronDownIcon
                         className={classNames(
                           open ? 'text-gray-600' : 'text-gray-400',
