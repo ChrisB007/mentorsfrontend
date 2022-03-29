@@ -37,8 +37,9 @@ const solutions = [
     icon: CursorClickIcon,
   },
   {
-    name: 'Teams',
-    description: "Your customers' data will be safe and secure.",
+    name: 'Technical Assistants (Teams)',
+    description:
+      'As a TA you are learning, but you can also mentor in so many ways, and make money while doing it.',
     href: '#',
     icon: ShieldCheckIcon,
   },

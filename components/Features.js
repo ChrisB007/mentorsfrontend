@@ -51,7 +51,7 @@ const actions = [
     iconForeground: 'text-sky-700',
     iconBackground: 'bg-sky-50',
     description:
-      'While we encourage you to seek help from other mentees in your session, you can also schedule one-on-one mentorship sessions as you see fit with experts if you are struggling at any level.',
+      'While we encourage you to seek help from other mentees in your session, you can also schedule one-on-one mentorship sessions as you see fit with your mentor if you are struggling at any level.',
   },
   {
     title: 'Challenges and Real-world Rewards',
