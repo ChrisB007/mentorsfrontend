@@ -46,7 +46,7 @@ const solutions = [
   {
     name: 'Integrations',
     description:
-      'We have integrated third-party tools for you to connect and use in your sessions to help your mentees succeed.',
+      'We have integrated third-party tools for you to connect with and use in your sessions to help your mentees succeed.',
     href: '#',
     icon: ViewGridIcon,
   },

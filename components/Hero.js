@@ -1,3 +1,5 @@
+import WaitingList from './waitingList';
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
@@ -27,21 +29,16 @@ export default function Hero() {
               &nbsp; as part of our solution.
             </p>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
-              <div className="rounded-md shadow">
+              {/*<div className="rounded-md shadow">
                 <a
                   href="#top-categories"
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 md:py-4 md:text-lg md:px-10"
                 >
                   Find out more
                 </a>
-              </div>
+              </div>*/}
               <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                <a
-                  href="#"
-                  className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-gray-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
-                >
-                  Join our waiting list
-                </a>
+                <WaitingList />
               </div>
             </div>
           </div>
