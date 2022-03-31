@@ -1,4 +1,36 @@
-export default function WaitingList() {
+import { useState } from 'react';
+import axios from 'axios';
+
+const Waitinglist = () => {
+  const [formEmail, setFormEmail] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios
+        .post(
+          '/api/mailgun',
+          {
+            email: formEmail,
+            body: JSON.stringify({
+              email: formEmail,
+            }),
+          },
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          },
+          setFormEmail(''),
+        )
+        .then((response) => {
+          console.log(response);
+        });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className=" shadow sm:rounded-lg">
       <div className="px-4 py-5 sm:p-6">
@@ -8,10 +40,10 @@ export default function WaitingList() {
         <div className="mt-2 max-w-xl text-sm text-gray-500">
           <p>
             We have a growing list of users that are interested in our
-            mentorship program, and can notify you as well when we launch.
+            mentorship program. The top 5,000 get early beta access.
           </p>
         </div>
-        <form className="mt-5 sm:flex sm:items-center">
+        <form onSubmit={handleSubmit} className="mt-5 sm:flex sm:items-center">
           <div className="w-full sm:max-w-xs">
             <label htmlFor="email" className="sr-only">
               Email
@@ -20,6 +52,8 @@ export default function WaitingList() {
               type="email"
               name="email"
               id="email"
+              value={formEmail}
+              onChange={(e) => setFormEmail(e.target.value)}
               className="shadow-sm focus:ring-slate-500 focus:border-slate-500 block h-10 w-full sm:text-sm border-gray-300 text-center rounded-md"
               placeholder="you@example.com"
             />
@@ -34,4 +68,6 @@ export default function WaitingList() {
       </div>
     </div>
   );
-}
+};
+
+export default Waitinglist;

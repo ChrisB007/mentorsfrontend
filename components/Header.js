@@ -330,8 +330,8 @@ export default function Header() {
               </Popover>
             </Popover.Group>
 
-            {/*<div className="flex items-center md:ml-12">
-              {session ? (
+            <div className="flex items-center md:ml-12">
+              {/*{session ? (
                 <>
                   <span className="flex justify-center items-center space-x-3 px-3">
                     <p>{`Hello ${user.name}`}</p>
@@ -356,8 +356,8 @@ export default function Header() {
                     Get Access
                   </a>
                 </Link>
-              )}
-            </div>*/}
+              )}*/}
+            </div>
           </div>
         </div>
       </div>
