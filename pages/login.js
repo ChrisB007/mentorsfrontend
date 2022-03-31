@@ -14,7 +14,7 @@ export default function Login({ providers }) {
                 <button
                   onClick={() =>
                     signIn(provider.id, {
-                      callbackUrl: `${window.location.origin}/dashboard`,
+                      callbackUrl: `/dashboard`,
                     })
                   }
                 >
