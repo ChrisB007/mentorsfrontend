@@ -20,6 +20,7 @@ import {
   XIcon,
 } from '@heroicons/react/outline';
 import { ChevronDownIcon } from '@heroicons/react/solid';
+import Image from 'next/image';
 
 const solutions = [
   {
@@ -331,7 +332,7 @@ export default function Header() {
             </Popover.Group>
 
             <div className="flex items-center md:ml-12">
-              {/*{session ? (
+              {session ? (
                 <>
                   <span className="flex justify-center items-center space-x-3 px-3">
                     <p>{`Hello ${user.name}`}</p>
@@ -356,7 +357,7 @@ export default function Header() {
                     Get Access
                   </a>
                 </Link>
-              )}*/}
+              )}
             </div>
           </div>
         </div>
