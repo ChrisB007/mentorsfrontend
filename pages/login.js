@@ -1,5 +1,4 @@
 import { getSession, signIn, useSession, getProviders } from 'next-auth/react';
-import Link from 'next/link';
 
 export default function Login({ providers }) {
   return (
