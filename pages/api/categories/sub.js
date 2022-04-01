@@ -4,17 +4,13 @@ const Index = async (req, res) => {
   const prisma = new PrismaClient();
   try {
     if (req.method === 'GET') {
-      const categories = await prisma.category.findMany({
-        include: {
-          subCategories: true,
-        },
-      });
+      const categories = await prisma.sub.findMany({});
       res.status(200).json({ categories });
     } else if (req.method === 'POST') {
-      const { name, description, url, icon } = req.body;
+      const { name, description, url, image, category } = req.body;
 
-      const categories = await prisma.category.createMany({
-        data: [{ name, url, description, icon }],
+      const categories = await prisma.sub.createMany({
+        data: [{ name, description, url, image, category }],
       });
       res.status(200).json({ categories });
     }
