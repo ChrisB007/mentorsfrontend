@@ -14,7 +14,7 @@ const features = [
   'Perspiciatis eveniet inventore eum et aliquam.',
 ];
 
-export default function Example() {
+export default function Pricing() {
   return (
     <div className="bg-white">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
@@ -22,7 +22,7 @@ export default function Example() {
           <div>
             <h1 className="text-4xl font-extrabold sm:text-5xl sm:tracking-tight">
               <span className="text-gray-900">Everything you need for </span>
-              <span className="text-indigo-600">$99 a month</span>
+              <span className="text-slate-600">$30 a session</span>
             </h1>
             <p className="mt-5 text-xl text-gray-500">
               Includes every feature we offer plus unlimited projects and
@@ -31,14 +31,14 @@ export default function Example() {
           </div>
           <a
             href="#"
-            className="mt-8 w-full bg-indigo-600 border border-transparent px-5 py-3 inline-flex items-center justify-center text-base font-medium rounded-md text-white hover:bg-indigo-700 sm:mt-10 sm:w-auto xl:mt-0"
+            className="mt-8 w-full bg-slate-600 border border-transparent px-5 py-3 inline-flex items-center justify-center text-base font-medium rounded-md text-white hover:bg-slate-700 sm:mt-10 sm:w-auto xl:mt-0"
           >
             Get started today
           </a>
         </div>
         <div className="border-t border-gray-200 pt-16 xl:grid xl:grid-cols-3 xl:gap-x-8">
           <div>
-            <h2 className="text-base font-semibold text-indigo-600 tracking-wide uppercase">
+            <h2 className="text-base font-semibold text-slate-600 tracking-wide uppercase">
               Everything you need
             </h2>
             <p className="mt-2 text-3xl font-extrabold text-gray-900">

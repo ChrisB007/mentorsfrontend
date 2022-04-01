@@ -10,7 +10,7 @@ const pricing = {
         'Offer mentorship FREE to individuals from the kindness of your heart.',
       features: [
         '5 mentees per session',
-        'One-on-One mentorship',
+        'One-on-One sessions',
         'Integrated tools',
         'Schedule Sessions at your own time',
       ],
@@ -29,6 +29,7 @@ const pricing = {
         'Sell tutorials & supporting session merchandises',
         'Set affiliate links for revenue opportunities',
         'Promotion/Marketing included',
+        'Recurring revenue opportunities',
       ],
       cta: 'Start Today',
       mostPopular: true,
