@@ -27,28 +27,28 @@ const solutions = [
     name: 'Work for us',
     description:
       'We are always looking for experienced individuals to join our team and provide mentorship to users. We are hiring full-time mentors.',
-    href: '#',
+    href: '/hiring',
     icon: ChartBarIcon,
   },
   {
     name: 'Do your own thing',
     description:
       'Sell merch, set your schedules and rates when you provide mentorship as subscription services to our users.',
-    href: '#',
+    href: '/contract-mentors',
     icon: CursorClickIcon,
   },
   {
     name: 'Technical Assistants (Teams)',
     description:
       'As a TA you are learning, but you can also mentor in so many ways, and make money while doing it.',
-    href: '#',
+    href: '/team-plans',
     icon: ShieldCheckIcon,
   },
   {
     name: 'Integrations',
     description:
       'We have integrated third-party tools for you to connect with and use in your sessions to help your mentees succeed.',
-    href: '#',
+    href: '/integrations',
     icon: ViewGridIcon,
   },
 ];
@@ -65,26 +65,26 @@ const resources = [
   { name: 'Guides', href: '#', icon: BookmarkAltIcon },
   { name: 'Webinars', href: '#', icon: DesktopComputerIcon },
 ];
-const blogPosts = [
-  {
-    id: 1,
-    name: 'Boost your conversion rate',
-    href: '#',
-    preview:
-      'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80',
-  },
-  {
-    id: 2,
-    name: 'How to use search engine optimization to drive traffic to your site',
-    href: '#',
-    preview:
-      'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80',
-  },
-];
+//const blogPosts = [
+//  {
+//    id: 1,
+//    name: 'Boost your conversion rate',
+//    href: '#',
+//    preview:
+//      'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
+//    imageUrl:
+//      'https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2849&q=80',
+//  },
+//  {
+//    id: 2,
+//    name: 'How to use search engine optimization to drive traffic to your site',
+//    href: '#',
+//    preview:
+//      'Eget ullamcorper ac ut vulputate fames nec mattis pellentesque elementum. Viverra tempor id mus.',
+//    imageUrl:
+//      'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2300&q=80',
+//  },
+//];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -191,7 +191,7 @@ export default function Header() {
                 )}
               </Popover>
               <a
-                href="#"
+                href="/pricing"
                 className="text-base font-medium text-gray-500 hover:text-gray-900"
               >
                 Pricing
@@ -280,7 +280,7 @@ export default function Header() {
                               </ul>
                             </div>
                           </nav>
-                          <div className="bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
+                          {/*<div className="bg-gray-50 px-4 py-8 sm:py-12 sm:px-6 lg:px-8 xl:pl-12">
                             <div>
                               <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">
                                 From the blog
@@ -322,7 +322,7 @@ export default function Header() {
                                 <span aria-hidden="true">&rarr;</span>
                               </a>
                             </div>
-                          </div>
+                          </div>*/}
                         </div>
                       </Popover.Panel>
                     </Transition>
