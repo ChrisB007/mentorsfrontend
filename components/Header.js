@@ -38,13 +38,6 @@ const solutions = [
     icon: CursorClickIcon,
   },
   {
-    name: 'Technical Assistants (Teams)',
-    description:
-      'As a TA you are learning, but you can also mentor in so many ways, and make money while doing it.',
-    href: '/team-plans',
-    icon: ShieldCheckIcon,
-  },
-  {
     name: 'Integrations',
     description:
       'We have integrated third-party tools for you to connect with and use in your sessions to help your mentees succeed.',
