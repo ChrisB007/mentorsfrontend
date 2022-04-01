@@ -28,7 +28,7 @@ export default function Hiring() {
             <div className="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
               <div className="flex-1 bg-white px-6 py-8 lg:p-12">
                 <h3 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
-                  Vice President, Partnerships & Business Development
+                  In-house Mentors
                 </h3>
                 <p className="mt-6 text-base text-gray-500">
                   As the VP of Partnerships & Business Development you will lead
@@ -178,7 +178,7 @@ export default function Hiring() {
             <div className="max-w-lg mx-auto rounded-lg shadow-lg overflow-hidden lg:max-w-none lg:flex">
               <div className="flex-1 bg-white px-6 py-8 lg:p-12">
                 <h3 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
-                  In-house Mentors
+                  Vice President, Partnerships & Business Development
                 </h3>
                 <p className="mt-6 text-base text-gray-500">
                   As the VP of Partnerships & Business Development you will lead

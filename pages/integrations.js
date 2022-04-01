@@ -6,7 +6,7 @@ export default function Example() {
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div>
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              Used by the world's most average companies
+              Used by the world&apos;s most average companies
             </h2>
             <p className="mt-3 max-w-3xl text-lg text-gray-500">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
