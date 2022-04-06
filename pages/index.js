@@ -12,7 +12,7 @@ export default function Home({ data }) {
       name: category.name,
       url: category.url,
       icon: category.icon,
-      subCategories: category.subCategories,
+      subCategories: category.subcategories,
     };
   });
 
@@ -40,7 +40,7 @@ export default function Home({ data }) {
                       name={category.name}
                       url={category.url}
                       icon={category.icon}
-                      subCategories={category.subCategories}
+                      subCategories={category.subcategories}
                     />
                   </div>
                 );

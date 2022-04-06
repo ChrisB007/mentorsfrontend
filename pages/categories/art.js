@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 const Art = ({ data }) => {
   const { categories } = data;
   const { subCategories } = categories[0];
