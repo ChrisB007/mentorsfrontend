@@ -55,7 +55,7 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps() {
-  const categoryUrl = `http://localhost:3000/api/categories`;
+  const categoryUrl = `https://www.mentorsparlor.com/api/categories`;
   const { data } = await axios.get(categoryUrl);
   return {
     props: { data },
