@@ -33,7 +33,7 @@ export default function Home({ data }) {
             <div className="grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 px-3 max-w-7xl m-auto pb-3 mt-3">
               {catInfo.map((category) => {
                 return (
-                  <div className="">
+                  <div key={category.id} className="">
                     <Category
                       key={category.id}
                       id={category.id}
