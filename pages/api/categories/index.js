@@ -6,7 +6,11 @@ const Index = async (req, res) => {
     if (req.method === 'GET') {
       const categories = await prisma.category.findMany({
         include: {
-          subCategories: true,
+          subCategories: {
+            include: {
+              sub: true,
+            },
+          },
         },
       });
       res.status(200).json({ categories });

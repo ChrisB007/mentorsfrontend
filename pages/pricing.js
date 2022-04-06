@@ -2,9 +2,9 @@
 import { CheckIcon } from '@heroicons/react/outline';
 
 const features = [
-  'Vitae in pulvinar odio id utobortis in inter.',
-  'Sed sed id viverra viverra augue eget massa.',
-  'Urna, gravida amet, a, integer venenatis.',
+  'Learn and develop a skills by practicing.',
+  'Learn within a group of like-minded individuals.',
+  'One on one individual session with your mentor.',
   'Lobortis sed pharetra amet vitae eleifend.',
   'Ullamcorper blandit a consequat donec elit aoreet.',
   'Dolor quo assumenda.',
@@ -21,19 +21,20 @@ export default function Pricing() {
         <div className="pb-16 xl:flex xl:items-center xl:justify-between">
           <div>
             <h1 className="text-4xl font-extrabold sm:text-5xl sm:tracking-tight">
-              <span className="text-gray-900">Everything you need for </span>
-              <span className="text-slate-600">$30 a session</span>
+              <span className="text-gray-900">
+                Learn, Grow & Develop skills from experienced individuals for{' '}
+              </span>
+              <span className="text-slate-600"> $30 a session</span>
             </h1>
             <p className="mt-5 text-xl text-gray-500">
-              Includes every feature we offer plus unlimited projects and
-              unlimited users.
+              Private practice time with mentor.
             </p>
           </div>
           <a
             href="#"
-            className="mt-8 w-full bg-slate-600 border border-transparent px-5 py-3 inline-flex items-center justify-center text-base font-medium rounded-md text-white hover:bg-slate-700 sm:mt-10 sm:w-auto xl:mt-0"
+            className="mt-8 bg-slate-600 border border-transparent px-5 py-3 inline-flex items-center justify-center text-base font-medium rounded-md text-white hover:bg-slate-700 sm:mt-10 sm:w-1/5 xl:mt-0"
           >
-            Get started today
+            Start today
           </a>
         </div>
         <div className="border-t border-gray-200 pt-16 xl:grid xl:grid-cols-3 xl:gap-x-8">

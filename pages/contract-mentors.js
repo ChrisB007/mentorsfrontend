@@ -60,12 +60,14 @@ function classNames(...classes) {
 export default function Example() {
   return (
     <div className="max-w-7xl mx-auto py-24 px-4 bg-white sm:px-6 lg:px-8">
-      <h2 className="text-3xl font-extrabold text-gray-900 sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl">
+      <h2 className="text-3xl font-extrabold text-gray-900 sm:text-5xl sm:leading-none sm:tracking-tight lg:text-6xl text-center">
         Offer mentorship to our community.
       </h2>
-      <p className="mt-6 max-w-2xl text-xl text-gray-500">
-        Choose an affordable plan that is packed with the best features for
-        engaging your audience, creating customer loyalty, and driving sales.
+      <p className="mt-6 max-w-2xl text-xl text-gray-500 text-center m-auto">
+        Offer mentorship and guidance to bevy number of users looking to
+        up-skill and get rewarded financially and morally for it. Mentor users
+        for free or make recurring income by setting your own rates, schedules
+        and more.
       </p>
 
       {/* Tiers */}
