@@ -16,7 +16,7 @@ export default function Home({ data }) {
     };
   });
 
-  console.log(catInfo);
+  //  console.log(catInfo);
 
   return (
     <>
@@ -57,9 +57,10 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps() {
-  const categoryUrl = `https://www.mentorsparlor.com/api/categories`;
+  const categoryUrl = `http://localhost:3000/api/categories`;
   //  const localUrl = `http://localhost:3000/api/categories`;
   const { data } = await axios.get(categoryUrl);
+
   return {
     props: { data },
   };

@@ -26,7 +26,7 @@ const Music = ({ data }) => {
 export default Music;
 
 export async function getServerSideProps() {
-  const categoryUrl = `https://www.mentorsparlor.com/api/categories`;
+  const categoryUrl = `http://localhost:3000/api/categories`;
   //  const localUrl = `http://localhost:3000/api/categories`;
   const { data } = await axios.get(categoryUrl);
 
