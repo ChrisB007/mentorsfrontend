@@ -1,8 +1,7 @@
-import axios from 'axios';
+import { PrismaClient } from '@prisma/client';
 
-const Art = ({ data }) => {
-  const { categories } = data;
-  const { subcategories } = categories[0];
+const Art = ({ categories }) => {
+  const subCategories = categories[0].subcategories;
 
   return (
     <>
@@ -10,7 +9,7 @@ const Art = ({ data }) => {
         Find a mentor in Art
       </h1>
       <div className="flex flex-wrap w-3/4 justify-center items-center m-auto mt-10">
-        {subcategories.map((categoryItem) => {
+        {subCategories.map((categoryItem) => {
           return (
             <div key={categoryItem.id} className="mt-3 mx-3 m-auto max-w-6xl">
               <div className="flex justify-center items-center w-80 h-36 border m-auto">
@@ -25,13 +24,23 @@ const Art = ({ data }) => {
 };
 
 export async function getServerSideProps() {
-  const categoryUrl = `http://localhost:3000/api/categories`;
-  //  const localUrl = `http://localhost:3000/api/categories`;
-
-  const { data } = await axios.get(categoryUrl);
-
+  const prisma = new PrismaClient();
+  const categories = await prisma.category.findMany({
+    select: {
+      id: true,
+      name: true,
+      description: true,
+      subcategories: {
+        select: {
+          id: true,
+          name: true,
+          description: true,
+        },
+      },
+    },
+  });
   return {
-    props: { data },
+    props: { categories },
   };
 }
 
