@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const Art = ({ data }) => {
   const { categories } = data;
-  const { subCategories } = categories[0];
+  const { subcategories } = categories[0];
 
   return (
     <>
@@ -10,7 +10,7 @@ const Art = ({ data }) => {
         Find a mentor in Art
       </h1>
       <div className="flex flex-wrap w-3/4 justify-center items-center m-auto mt-10">
-        {subCategories.map((categoryItem) => {
+        {subcategories.map((categoryItem) => {
           return (
             <div key={categoryItem.id} className="mt-3 mx-3 m-auto max-w-6xl">
               <div className="flex justify-center items-center w-80 h-36 border m-auto">
@@ -25,8 +25,9 @@ const Art = ({ data }) => {
 };
 
 export async function getServerSideProps() {
-  const categoryUrl = `https://www.mentorsparlor.com/api/categories`;
-  const { data } = await axios.get(categoryUrl);
+  //  const categoryUrl = `https://www.mentorsparlor.com/api/categories`;
+  const localUrl = `http://localhost:3000/api/categories`;
+  const { data } = await axios.get(localUrl);
 
   return {
     props: { data },

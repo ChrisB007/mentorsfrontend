@@ -99,9 +99,9 @@ model Category {
   createdAt     DateTime      @default(now())
   updatedAt     DateTime      @updatedAt
   description   String?       @db.VarChar(255)
-  url           String?       @db.VarChar(255)
   icon          String?       @db.VarChar(255)
-  subCategories Subcategory[]
+  url           String?       @db.VarChar(255)
+  subcategories Subcategory[]
 }
 
 model Subcategory {
@@ -110,11 +110,12 @@ model Subcategory {
   updatedAt        DateTime  @updatedAt
   categoryId       Int?
   subId            Int?
+  category         String?
   description      String?
+  icon             String?
   image            String?
   name             String?   @db.VarChar(255)
   url              String?
-  category         String?
   categoryRelation Category? @relation(fields: [categoryId], references: [id])
   Program          Program[]
   sub              Sub[]

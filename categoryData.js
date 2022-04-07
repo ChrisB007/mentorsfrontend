@@ -103,7 +103,7 @@ export const data = [
       {
         name: 'Drums',
         description: 'Find mentor in in music',
-        image: 'drawing',
+        image: 'drums',
         url: '/drums',
         category: 'Music',
       },
