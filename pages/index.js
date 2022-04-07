@@ -3,10 +3,9 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Category from '../components/Categories';
 import { PrismaClient } from '@prisma/client';
-import axios from 'axios';
 
 export default function Home({ categories }) {
-  console.log(Array.isArray(categories));
+  console.log(categories);
 
   return (
     <>
@@ -52,8 +51,8 @@ export async function getServerSideProps() {
     select: {
       id: true,
       name: true,
-      url: true,
       icon: true,
+      url: true,
       subcategories: {
         select: {
           id: true,
@@ -67,7 +66,6 @@ export async function getServerSideProps() {
               id: true,
               name: true,
               url: true,
-              image: true,
               description: true,
             },
           },
