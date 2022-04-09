@@ -1,149 +1,150 @@
 generator client {
-  provider = "prisma-client-js"
+      provider        = "prisma-client-js"
+      previewFeatures = ["dataProxy"]
 }
 
 datasource db {
-  provider          = "postgresql"
-  url               = env("DATABASE_URL")
-  shadowDatabaseUrl = env("HEROKU_POSTGRESQL_MAROON_URL")
+      provider = "postgresql"
+      url      = env("DATABASE_URL")
 }
 
 model Account {
-  id                String  @id @default(cuid())
-  userId            String
-  type              String
-  provider          String
-  providerAccountId String
-  refresh_token     String?
-  access_token      String?
-  expires_at        Int?
-  token_type        String?
-  scope             String?
-  id_token          String?
-  session_state     String?
-  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+      id                String  @id @default(cuid())
+      userId            String
+      type              String
+      provider          String
+      providerAccountId String
+      refresh_token     String?
+      access_token      String?
+      expires_at        Int?
+      token_type        String?
+      scope             String?
+      id_token          String?
+      session_state     String?
+      user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@unique([provider, providerAccountId])
+      @@unique([provider, providerAccountId])
 }
 
 model Session {
-  id           String   @id @default(cuid())
-  sessionToken String   @unique
-  userId       String
-  expires      DateTime
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+      id           String   @id @default(cuid())
+      sessionToken String   @unique
+      userId       String
+      expires      DateTime
+      user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  image         String?
-  emailVerified DateTime?
-  Role          Role?     @default(MENTEE)
-  accounts      Account[]
-  Program       Program[]
-  sessions      Session[]
+      id            String    @id @default(cuid())
+      name          String?
+      email         String?   @unique
+      image         String?
+      emailVerified DateTime?
+      Role          Role?     @default(MENTEE)
+      accounts      Account[]
+      Program       Program[]
+      sessions      Session[]
 }
 
 model VerificationToken {
-  identifier String
-  token      String   @unique
-  expires    DateTime
+      identifier String
+      token      String   @unique
+      expires    DateTime
 
-  @@unique([identifier, token])
+      @@unique([identifier, token])
 }
 
 model Profile {
-  id     Int     @id @default(autoincrement())
-  bio    String?
-  userId Int     @unique
+      id     Int     @id @default(autoincrement())
+      bio    String?
+      userId Int     @unique
 }
 
 model Program {
-  id            Int          @id @default(autoincrement())
-  name          String       @db.VarChar(255)
-  description   String
-  createdAt     DateTime     @default(now())
-  updatedAt     DateTime     @updatedAt
-  subcategoryId Int
-  UserId        Int?
-  userId        String?
-  subcategory   Subcategory  @relation(fields: [subcategoryId], references: [id])
-  User          User?        @relation(fields: [userId], references: [id])
-  curriculum    Curriculum[]
-  rates         Rate[]
+      id            Int          @id @default(autoincrement())
+      name          String       @db.VarChar(255)
+      description   String
+      createdAt     DateTime     @default(now())
+      updatedAt     DateTime     @updatedAt
+      subcategoryId Int
+      UserId        Int?
+      userId        String?
+      subcategory   Subcategory  @relation(fields: [subcategoryId], references: [id])
+      User          User?        @relation(fields: [userId], references: [id])
+      curriculum    Curriculum[]
+      rates         Rate[]
 }
 
 model Rate {
-  id        Int      @id @default(autoincrement())
-  rate      Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  programId Int?
-  Program   Program? @relation(fields: [programId], references: [id])
+      id        Int      @id @default(autoincrement())
+      rate      Int
+      createdAt DateTime @default(now())
+      updatedAt DateTime @updatedAt
+      programId Int?
+      Program   Program? @relation(fields: [programId], references: [id])
 }
 
 model Curriculum {
-  id        Int      @id @default(autoincrement())
-  name      String   @db.VarChar(255)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  programId Int?
-  Program   Program? @relation(fields: [programId], references: [id])
+      id        Int      @id @default(autoincrement())
+      name      String   @db.VarChar(255)
+      createdAt DateTime @default(now())
+      updatedAt DateTime @updatedAt
+      programId Int?
+      Program   Program? @relation(fields: [programId], references: [id])
 }
 
 model Category {
-  id            Int           @id @default(autoincrement())
-  name          String?       @db.VarChar(255)
-  createdAt     DateTime      @default(now())
-  updatedAt     DateTime      @updatedAt
-  description   String?       @db.VarChar(255)
-  icon          String?       @db.VarChar(255)
-  url           String?       @db.VarChar(255)
-  subcategories Subcategory[]
+      id            Int           @id @default(autoincrement())
+      name          String?       @db.VarChar(255)
+      createdAt     DateTime      @default(now())
+      updatedAt     DateTime      @updatedAt
+      description   String?       @db.VarChar(255)
+      icon          String?       @db.VarChar(255)
+      url           String?       @db.VarChar(255)
+      subcategories Subcategory[]
 }
 
 model Subcategory {
-  id               Int       @id @default(autoincrement())
-  createdAt        DateTime  @default(now())
-  updatedAt        DateTime  @updatedAt
-  categoryId       Int?
-  subId            Int?
-  category         String?
-  description      String?
-  icon             String?
-  image            String?
-  name             String?   @db.VarChar(255)
-  url              String?
-  categoryRelation Category? @relation(fields: [categoryId], references: [id])
-  Program          Program[]
-  sub              Sub[]
+      id               Int       @id @default(autoincrement())
+      createdAt        DateTime  @default(now())
+      updatedAt        DateTime  @updatedAt
+      categoryId       Int?
+      subId            Int?
+      category         String?
+      description      String?
+      icon             String?
+      image            String?
+      name             String?   @db.VarChar(255)
+      url              String?
+      categoryRelation Category? @relation(fields: [categoryId], references: [id])
+      Program          Program[]
+      sub              Sub[]
 }
 
 model Sub {
-  id                   Int          @id @default(autoincrement())
-  name                 String?      @db.VarChar(255)
-  description          String?
-  url                  String?
-  createdAt            DateTime     @default(now())
-  updatedAt            DateTime     @updatedAt
-  categoryId           Int?
-  subcategoryId        Int?
-  image                String?
-  category             String?
-  categoryRelationship Subcategory? @relation(fields: [subcategoryId], references: [id])
+      id                   Int          @id @default(autoincrement())
+      name                 String?      @db.VarChar(255)
+      description          String?
+      url                  String?
+      createdAt            DateTime     @default(now())
+      updatedAt            DateTime     @updatedAt
+      categoryId           Int?
+      subcategoryId        Int?
+      image                String?
+      category             String?
+      categoryRelationship Subcategory? @relation(fields: [subcategoryId], references: [id])
 }
 
 model Sales {
-  id        Int      @id @default(autoincrement())
-  email     String   @db.VarChar(255)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+      id        Int      @id @default(autoincrement())
+      email     String   @db.VarChar(255)
+      createdAt DateTime @default(now())
+      updatedAt DateTime @updatedAt
 }
 
 enum Role {
-  ADMIN
-  MENTOR
-  MENTEE
+      ADMIN
+      MENTEE
+      MENTOR
+
 }

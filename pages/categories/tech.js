@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import Link from 'next/link';
 
 const Tech = ({ categories }) => {
   const subCategories = categories[3].subcategories;
@@ -11,12 +12,24 @@ const Tech = ({ categories }) => {
       <div className="flex flex-wrap w-3/4 justify-center items-center m-auto mt-10">
         {subCategories.map((categoryItem) => {
           return (
-            <div key={categoryItem.id} className="mt-3 mx-3 m-auto max-w-6xl">
-              <div className="flex flex-col justify-center items-center w-80 h-36 border m-auto">
-                <p>{`${categoryItem.name}`}</p>
-              </div>
-              <div></div>
-            </div>
+            <Link href={categoryItem.url}>
+              <a>
+                <div
+                  key={categoryItem.id}
+                  className="mt-3 mx-3 m-auto max-w-6xl "
+                >
+                  <div
+                    className="cat-boxes flex justify-center items-center w-80 h-44 border m-auto rounded "
+                    style={{
+                      backgroundImage: `url(${categoryItem.image})`,
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                    <p className="cat-text text-2xl text-gray-200">{`${categoryItem.name}`}</p>
+                  </div>
+                </div>
+              </a>
+            </Link>
           );
         })}
       </div>
@@ -38,6 +51,8 @@ export async function getServerSideProps() {
           id: true,
           name: true,
           description: true,
+          url: true,
+          image: true,
         },
       },
     },
