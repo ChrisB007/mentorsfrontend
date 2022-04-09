@@ -11,7 +11,7 @@ const Music = ({ categories }) => {
       <div className="flex flex-wrap w-3/4 justify-center items-center m-auto mt-10">
         {subCategories.map((categoryItem) => {
           return (
-            <Link href={categoryItem.url}>
+            <Link key={categoryItem.id} href={categoryItem.url}>
               <a>
                 <div
                   key={categoryItem.id}
