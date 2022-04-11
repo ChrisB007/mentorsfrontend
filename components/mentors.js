@@ -1,22 +1,12 @@
 import { useSession } from 'next-auth/react';
-import {
-  CheckIcon,
-  HomeIcon,
-  PaperClipIcon,
-  QuestionMarkCircleIcon,
-  SearchIcon,
-  ThumbUpIcon,
-  UserIcon,
-} from '@heroicons/react/solid';
+import { QuestionMarkCircleIcon } from '@heroicons/react/solid';
 import Progress from './progress';
 import OverallProgress from './overallProgress';
 import Dashsessions from './dashboardsessions';
+import Tabs from './dashboardtabs';
+import Image from 'next/image';
+import Search from './search';
 
-const eventTypes = {
-  applied: { icon: UserIcon, bgColorClass: 'bg-gray-400' },
-  advanced: { icon: ThumbUpIcon, bgColorClass: 'bg-gray-500' },
-  completed: { icon: CheckIcon, bgColorClass: 'bg-green-500' },
-};
 const comments = [
   {
     id: 1,
@@ -40,7 +30,6 @@ const comments = [
     body: 'Expedita consequatur sit ea voluptas quo ipsam recusandae. Ab sint et voluptatem repudiandae voluptatem et eveniet. Nihil quas consequatur autem. Perferendis rerum et.',
   },
 ];
-import Image from 'next/image';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -83,6 +72,9 @@ export default function Mentors() {
                 </p>
               </div>
             </div>
+            <div className="w-1/3">
+              <Search />
+            </div>
             <div className="mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-reverse sm:space-y-0 sm:space-x-3 md:mt-0 md:flex-row md:space-x-3">
               <button
                 type="button"
@@ -102,6 +94,7 @@ export default function Mentors() {
           <div className="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
             <div className="space-y-6 lg:col-start-1 lg:col-span-2">
               {/* Description list*/}
+              <Tabs />
               <section aria-labelledby="applicant-information-title">
                 <div className="bg-white shadow sm:rounded-lg">
                   <div className="px-4 py-5 sm:px-6">
@@ -135,7 +128,7 @@ export default function Mentors() {
                           My messages
                         </dt>
                         <dd className="mt-1 text-sm text-gray-900">
-                          You have 10+ messages
+                          You have 10 new messages
                         </dd>
                       </div>
                       <div className="sm:col-span-1">
@@ -156,7 +149,7 @@ export default function Mentors() {
                       </div>
                     </dl>
                     <h2 className="text-sm mt-4 mb-2 font-medium text-gray-500">
-                      My Sessions
+                      Upcoming Sessions
                     </h2>
                     <Dashsessions />
                   </div>
@@ -296,14 +289,14 @@ export default function Mentors() {
                 <div className="mt-6 flow-root">
                   <h2
                     id="timeline-title"
-                    className="text-lg mb-5 font-medium text-gray-900"
+                    className="text-lg mb-5 font-medium text-amber-500"
                   >
                     7-Day Milestone
                   </h2>
                   <Progress />
                   <h2
                     id="timeline-title"
-                    className="text-lg mt-3 mb-5 font-medium text-gray-900"
+                    className="text-lg mt-3 mb-5 font-medium text-green-900"
                   >
                     Overall Progress
                   </h2>
