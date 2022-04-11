@@ -21,9 +21,6 @@ export default function Home({ categories }) {
             <Hero />
             <div className="grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 px-3 max-w-7xl m-auto pb-3 mt-3">
               {categories.map((category) => {
-                {
-                  console.log(category.url);
-                }
                 return (
                   <div key={category.id} className="">
                     <Category

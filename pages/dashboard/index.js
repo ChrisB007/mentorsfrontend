@@ -1,8 +1,8 @@
 import { getSession, useSession } from 'next-auth/react';
-import Home from '..';
 import Mentors from '../../components/mentors';
 
 const Index = ({ session }) => {
+  console.log(session);
   return (
     <>
       <div>
@@ -16,6 +16,7 @@ export default Index;
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
+
   if (!session) {
     return {
       redirect: {
@@ -24,6 +25,7 @@ export async function getServerSideProps(context) {
       },
     };
   }
+
   return {
     props: {
       session,
