@@ -35,9 +35,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Mentors() {
-  const { data: session, loading } = useSession();
-  const user = session?.user;
+export default function Mentors({ user }) {
   return (
     <>
       <div className="min-h-full">

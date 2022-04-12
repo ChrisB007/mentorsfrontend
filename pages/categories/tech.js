@@ -28,27 +28,31 @@ const Tech = ({ categories }) => {
                 </div>
                 <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-indigo-600">
-                      <a href={categoryItem.url} className="hover:underline">
-                        {categoryItem.name}
+                    <Link href={categoryItem.url}>
+                      <p className="text-sm font-medium text-indigo-600">
+                        <a className="hover:underline">{categoryItem.name}</a>
+                      </p>
+                    </Link>
+                    <Link href={categoryItem.url}>
+                      <a className="block mt-2">
+                        <p className="text-xl font-semibold text-gray-900">
+                          {categoryItem.name}
+                        </p>
+                        <p className="mt-3 text-base text-gray-500">
+                          {categoryItem.description}
+                        </p>
                       </a>
-                    </p>
-                    <a href={categoryItem.url} className="block mt-2">
-                      <p className="text-xl font-semibold text-gray-900">
-                        {categoryItem.name}
-                      </p>
-                      <p className="mt-3 text-base text-gray-500">
-                        {categoryItem.description}
-                      </p>
-                    </a>
+                    </Link>
                   </div>
                   <div className="mt-6 flex items-center">
                     <div className="ml-3">
-                      <p className="text-sm font-medium text-gray-900">
-                        <a href={categoryItem.url} className="hover:underline">
-                          {categoryItem.name}
-                        </a>
-                      </p>
+                      <Link href={categoryItem.url}>
+                        <p className="text-sm font-medium text-gray-900">
+                          <a className="hover:underline cursor-pointer">
+                            Visit category
+                          </a>
+                        </p>
+                      </Link>
                     </div>
                   </div>
                 </div>

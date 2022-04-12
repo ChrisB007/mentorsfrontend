@@ -1,12 +1,18 @@
 import { getSession, useSession } from 'next-auth/react';
 import Mentors from '../../components/mentors';
+import Mentees from '../../components/mentees';
+import { PrismaClient } from '@prisma/client';
 
-const Index = ({ session }) => {
-  console.log(session);
+const Index = ({ user }) => {
+  console.log(user.Role);
   return (
     <>
       <div>
-        <Mentors />
+        {user.Role === 'MENTEE' ? (
+          <Mentees user={user} />
+        ) : (
+          <Mentors user={user} />
+        )}
       </div>
     </>
   );
@@ -16,6 +22,7 @@ export default Index;
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
+  const prisma = new PrismaClient();
 
   if (!session) {
     return {
@@ -26,9 +33,15 @@ export async function getServerSideProps(context) {
     };
   }
 
+  const user = await prisma.user.findUnique({
+    where: {
+      email: session.user.email,
+    },
+  });
+
   return {
     props: {
-      session,
+      user,
     },
   };
 }

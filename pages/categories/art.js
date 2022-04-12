@@ -45,8 +45,11 @@ const Art = ({ categories }) => {
                   <div className="mt-6 flex items-center">
                     <div className="ml-3">
                       <p className="text-sm font-medium text-gray-900">
-                        <a href={categoryItem.url} className="hover:underline">
-                          {categoryItem.name}
+                        <a
+                          href={categoryItem.url}
+                          className="hover:underline cursor-pointer"
+                        >
+                          Visit category
                         </a>
                       </p>
                     </div>
