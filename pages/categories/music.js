@@ -45,7 +45,7 @@ const Music = ({ categories }) => {
                     <div className="ml-3">
                       <p className="text-sm font-medium text-gray-900">
                         <a href={categoryItem.url} className="hover:underline">
-                          {categoryItem.name}
+                          Visit category
                         </a>
                       </p>
                     </div>
