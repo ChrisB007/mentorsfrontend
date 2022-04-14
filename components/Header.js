@@ -327,7 +327,7 @@ export default function Header() {
               {session ? (
                 <>
                   <span className="flex justify-center items-center space-x-3 px-3">
-                    <p>{`Hello ${user.name}`}</p>
+                    <p className="px-3">{`Hello ${user.name}`}</p>
                     <Image
                       src={user.image}
                       alt="logo"

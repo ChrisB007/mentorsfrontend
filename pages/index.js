@@ -27,7 +27,7 @@ export default function Home({ categories }) {
                       key={category.id}
                       id={category.id}
                       name={category.name}
-                      url={category.url}
+                      url={`/categories/${category.id}`}
                       icon={category.icon}
                       subCategories={category.subcategories}
                     />
@@ -43,36 +43,40 @@ export default function Home({ categories }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const prisma = new PrismaClient();
-  const categories = await prisma.category.findMany({
-    select: {
-      id: true,
-      name: true,
-      icon: true,
-      url: true,
-      subcategories: {
-        select: {
-          id: true,
-          name: true,
-          url: true,
-          icon: true,
-        },
-        select: {
-          sub: {
-            select: {
-              id: true,
-              name: true,
-              url: true,
-              description: true,
+  try {
+    const categories = await prisma.category.findMany({
+      select: {
+        id: true,
+        name: true,
+        icon: true,
+        url: true,
+        subcategories: {
+          select: {
+            id: true,
+            name: true,
+            url: true,
+            icon: true,
+          },
+          select: {
+            sub: {
+              select: {
+                id: true,
+                name: true,
+                url: true,
+                description: true,
+              },
             },
           },
         },
       },
-    },
-  });
+    });
 
-  return {
-    props: { categories },
-  };
+    return {
+      props: { categories },
+    };
+  } catch (error) {
+    console.error(error);
+  }
 }
