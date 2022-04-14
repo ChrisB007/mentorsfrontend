@@ -2,15 +2,16 @@ import { PrismaClient } from '@prisma/client';
 
 const SubCategory = (categories) => {
   const { subCategories } = categories;
-  const { id, name, url, image, description } = subCategories;
-  console.log(Array.isArray(subCategories));
+  const { name } = subCategories;
+  console.log(categories);
+
   return (
     <>
       <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
             <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-              Mentors to practice {name} with you
+              {`Practice ${name.toLowerCase()} with these Mentors`}
             </h2>
           </div>
           <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
@@ -79,12 +80,19 @@ export async function getServerSideProps(context) {
     select: {
       id: true,
       name: true,
-      url: true,
-      icon: true,
-      image: true,
-      description: true,
+      Program: {
+        select: {
+          id: true,
+          name: true,
+          description: true,
+          curriculum: true,
+          rates: true,
+          User: true,
+        },
+      },
     },
   });
+
   return {
     props: {
       subCategories: JSON.parse(JSON.stringify(categories)),
