@@ -22,6 +22,9 @@
   .hero-video {
     display: none;
   }
+  .heroimg {
+    display: none;
+  }
   .hero-div {
     height: 39rem;
   }
