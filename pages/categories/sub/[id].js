@@ -1,9 +1,9 @@
 import { PrismaClient } from '@prisma/client';
 import Image from 'next/image';
 
-const SubCategory = (categories, catId) => {
+const SubCategory = (categories, id, props) => {
   //  const { subCategories } = categories;
-  console.log('CATTT', catId);
+  console.log('CATTT', props);
 
   return (
     <>
@@ -66,7 +66,7 @@ const SubCategory = (categories, catId) => {
 export async function getServerSideProps(context) {
   const prisma = new PrismaClient();
   const { id } = context.query;
-  const catId = context.params.id;
+  //  const catId = context.params.id;
 
   const categories = await prisma.user.findMany({
     where: {
@@ -87,12 +87,11 @@ export async function getServerSideProps(context) {
     },
   });
 
-  //  const Program[catID] = id;
-
   return {
     props: {
+      error: !id && `No category found for id: ${id}`,
       categories,
-      catId,
+      id,
     },
   };
 }

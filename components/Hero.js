@@ -1,4 +1,5 @@
 import WaitingList from './waitingList';
+import Image from 'next/image';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -43,16 +44,11 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="relative w-full sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
-          <video
-            autoPlay
-            muted
-            loop
-            style={{ width: '605px', height: '521px' }}
-            className="hero-video absolute inset-0 w-full h-full object-cover pr-1"
-          >
-            <source src="/images/tutvideo.mp4" />
-          </video>
+        <div className="flex justify-center items-center relative w-full sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
+          <img
+            className="heroimg object-cover inset-0 w-full h-3/4 p-6"
+            src="/images/heroimg.png"
+          />
         </div>
       </main>
     </div>
