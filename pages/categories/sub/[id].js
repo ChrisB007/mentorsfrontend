@@ -1,67 +1,61 @@
 import { PrismaClient } from '@prisma/client';
+import Image from 'next/image';
 
-const SubCategory = (categories) => {
-  const { subCategories } = categories;
-  const { name } = subCategories;
-  console.log(categories);
+const SubCategory = (categories, catId) => {
+  //  const { subCategories } = categories;
+  console.log('CATTT', catId);
 
   return (
     <>
-      <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-        <div className="relative max-w-7xl mx-auto">
-          <div className="text-center">
-            <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-              {`Practice ${name.toLowerCase()} with these Mentors`}
-            </h2>
-          </div>
-          <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-            {/*{subCategories.map((categoryItem) => {
-              
-              return (
-                <div
-                  key={id}
-                  className="flex flex-col rounded-lg shadow-lg overflow-hidden"
-                >
-                  <div className="flex-shrink-0">
-                    <img
-                      className="h-48 w-full object-cover"
-                      src={image}
-                      alt={name}
-                    />
-                  </div>
-                  <div className="flex-1 bg-white p-6 flex flex-col justify-between">
-                    <div className="flex-1">
-                      <p className="text-sm font-medium text-indigo-600">
-                        <Link href={``}>
-                          <a className="hover:underline">{name}</a>
-                        </Link>
-                      </p>
-                      <Link href={``}>
-                        <a className="block mt-2">
-                          <p className="text-xl font-semibold text-gray-900">
-                            {name}
-                          </p>
-                          <p className="mt-3 text-base text-gray-500">
-                            {description}
-                          </p>
-                        </a>
-                      </Link>
-                    </div>
-                    <div className="mt-6 flex items-center">
-                      <div className="ml-3">
-                        <p className="text-sm font-medium text-gray-900">
-                          <Link href={``}>
-                            <a className="hover:underline cursor-pointer">
-                              Visit category
-                            </a>
-                          </Link>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}*/}
+      <div className="bg-slate-50">
+        <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+          <div className="space-y-12">
+            <ul className="flex justify-center items-center">
+              {/*{subCategories.map((category) => {
+                const { Program } = category;
+                return (
+                  <>
+                    {Program.map((mentor) => {
+                      const { subcategoryId } = mentor;
+                      return (
+                        <>
+                          {subcategoryId && (
+                            <>
+                              <div key={mentor.id} className="bg-slate-300">
+                                <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-12">
+                                  <div className="space-y-12">
+                                    <ul>
+                                      <li className="">
+                                        <div className="flex flex-col justify-center items-center">
+                                          <Image
+                                            className="w-48 h-48 rounded"
+                                            src={category.image}
+                                            alt={category.name}
+                                            width={200}
+                                            height={200}
+                                          />
+                                          <div className="flex flex-col justify-center items-center">
+                                            <h3 className="text-lg leading-6 font-medium text-gray-900">
+                                              {`${category.name}`}
+                                            </h3>
+                                            <p>{mentor.name}</p>
+                                            <p>{mentor.description}</p>
+                                          </div>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          )}
+                        </>
+                      );
+                    })}
+                  </>
+                );
+              })}*/}
+            </ul>
           </div>
         </div>
       </div>
@@ -72,30 +66,33 @@ const SubCategory = (categories) => {
 export async function getServerSideProps(context) {
   const prisma = new PrismaClient();
   const { id } = context.query;
+  const catId = context.params.id;
 
-  const categories = await prisma.subcategory.findUnique({
+  const categories = await prisma.user.findMany({
     where: {
-      id: Number(id),
+      Role: 'MENTOR',
     },
     select: {
       id: true,
       name: true,
+      image: true,
       Program: {
         select: {
           id: true,
           name: true,
           description: true,
-          curriculum: true,
-          rates: true,
-          User: true,
+          subcategoryId: true,
         },
       },
     },
   });
 
+  //  const Program[catID] = id;
+
   return {
     props: {
-      subCategories: JSON.parse(JSON.stringify(categories)),
+      categories,
+      catId,
     },
   };
 }
