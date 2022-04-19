@@ -3,8 +3,18 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Category from '../components/Categories';
 import { PrismaClient } from '@prisma/client';
+import { useState, useEffect } from 'react';
+import PropagateLoader from 'react-spinners/PropagateLoader';
 
 export default function Home({ categories }) {
+  const [isLoading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!categories) {
+      setLoading(true);
+    }
+  }, []);
+
   return (
     <>
       <div className="">
@@ -20,20 +30,29 @@ export default function Home({ categories }) {
           <main className="bg-gradient-to-r from-gray-50 via-slate-300 to-gray-50 pb-6">
             <Hero />
             <div className="grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 px-3 max-w-7xl m-auto pb-3 mt-3">
-              {categories.map((category) => {
-                return (
-                  <div key={category.id} className="">
-                    <Category
-                      key={category.id}
-                      id={category.id}
-                      name={category.name}
-                      url={`/categories/${category.id}`}
-                      icon={category.icon}
-                      subCategories={category.subcategories}
-                    />
-                  </div>
-                );
-              })}
+              {isLoading ? (
+                <PropagateLoader
+                  className="spinner flex justify-center items-center"
+                  color={'#555555'}
+                  loading={isLoading}
+                  size={10}
+                />
+              ) : (
+                categories.map((category) => {
+                  return (
+                    <div key={category.id} className="">
+                      <Category
+                        key={category.id}
+                        id={category.id}
+                        name={category.name}
+                        url={`/categories/${category.id}`}
+                        icon={category.icon}
+                        subCategories={category.subcategories}
+                      />
+                    </div>
+                  );
+                })
+              )}
             </div>
             <Features />
           </main>

@@ -41,8 +41,14 @@ const SubCategory = ({ categories, id }) => {
                                             <h3 className="text-lg leading-6 font-medium text-gray-900">
                                               {`${category.name}`}
                                             </h3>
-                                            <p>{mentor.name}</p>
-                                            <p>{mentor.description}</p>
+                                            <div className="bg-white">
+                                              <p className="flex justify-center items-center">
+                                                {mentor.name}
+                                              </p>
+                                              <p className="text-center whitespace-normal truncate ...">
+                                                {mentor.description}
+                                              </p>
+                                            </div>
                                           </div>
                                         </div>
                                       </li>
