@@ -23,12 +23,12 @@ const SubCategory = ({ categories, id }) => {
                             <>
                               <div
                                 key={mentor.id}
-                                className="bg-slate-300 w-1/4"
+                                className="flex flex-col rounded-lg shadow-lg overflow-hidden"
                               >
                                 <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-12">
                                   <div className="space-y-12">
                                     <ul>
-                                      <li className="">
+                                      <li key={category.id} className="">
                                         <div className="flex flex-col justify-center items-center">
                                           <Image
                                             className="w-40 h-40 rounded"

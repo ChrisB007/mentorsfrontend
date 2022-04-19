@@ -31,7 +31,7 @@ export default function Hero() {
             </p>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                <WaitingList />
+                {/*<WaitingList />*/}
               </div>
             </div>
           </div>
