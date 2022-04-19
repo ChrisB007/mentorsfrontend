@@ -2,6 +2,7 @@ import { PrismaClient } from '@prisma/client';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import ClipLoader from 'react-spinners/ClipLoader';
 
 const Category = ({ categories }) => {
   const [loading, setLoading] = useState(false);
