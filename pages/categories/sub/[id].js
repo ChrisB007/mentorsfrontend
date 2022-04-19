@@ -1,9 +1,8 @@
 import { PrismaClient } from '@prisma/client';
 import Image from 'next/image';
 
-const SubCategory = (categories, id, props) => {
-  //  const { subCategories } = categories;
-  console.log('CATTT', props);
+const SubCategory = ({ categories, id }) => {
+  const catId = Number(id);
 
   return (
     <>
@@ -11,24 +10,28 @@ const SubCategory = (categories, id, props) => {
         <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
           <div className="space-y-12">
             <ul className="flex justify-center items-center">
-              {/*{subCategories.map((category) => {
+              {categories.map((category) => {
                 const { Program } = category;
                 return (
                   <>
                     {Program.map((mentor) => {
                       const { subcategoryId } = mentor;
+
                       return (
                         <>
-                          {subcategoryId && (
+                          {subcategoryId === catId && (
                             <>
-                              <div key={mentor.id} className="bg-slate-300">
+                              <div
+                                key={mentor.id}
+                                className="bg-slate-300 w-1/4"
+                              >
                                 <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-12">
                                   <div className="space-y-12">
                                     <ul>
                                       <li className="">
                                         <div className="flex flex-col justify-center items-center">
                                           <Image
-                                            className="w-48 h-48 rounded"
+                                            className="w-40 h-40 rounded"
                                             src={category.image}
                                             alt={category.name}
                                             width={200}
@@ -54,7 +57,7 @@ const SubCategory = (categories, id, props) => {
                     })}
                   </>
                 );
-              })}*/}
+              })}
             </ul>
           </div>
         </div>
@@ -66,7 +69,6 @@ const SubCategory = (categories, id, props) => {
 export async function getServerSideProps(context) {
   const prisma = new PrismaClient();
   const { id } = context.query;
-  //  const catId = context.params.id;
 
   const categories = await prisma.user.findMany({
     where: {
