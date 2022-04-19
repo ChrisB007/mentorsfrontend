@@ -38,14 +38,14 @@ const SubCategory = ({ categories, id }) => {
                                             height={200}
                                           />
                                           <div className="flex flex-col justify-center items-center">
-                                            <h3 className="text-lg leading-6 font-medium text-gray-900">
+                                            <h3 className="text-lg leading-6 font-medium text-gray-900 text-left m-3">
                                               {`${category.name}`}
                                             </h3>
-                                            <div className="bg-white">
-                                              <p className="flex justify-center items-center">
+                                            <div className="bg-white mentor-box">
+                                              <p className="text-left">
                                                 {mentor.name}
                                               </p>
-                                              <p className="text-center whitespace-normal truncate ...">
+                                              <p className="text-left whitespace-normal truncate ...">
                                                 {mentor.description}
                                               </p>
                                             </div>
