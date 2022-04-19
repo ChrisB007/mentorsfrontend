@@ -1,6 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const Category = ({ categories }) => {
   const [loading, setLoading] = useState(false);
@@ -38,10 +39,13 @@ const Category = ({ categories }) => {
                     className="flex flex-col rounded-lg shadow-lg overflow-hidden"
                   >
                     <div className="flex-shrink-0">
-                      <img
+                      <Image
                         className="h-48 w-full object-cover"
                         src={image}
                         alt={name}
+                        layout="responsive"
+                        width={500}
+                        height={200}
                       />
                     </div>
                     <div className="flex-1 bg-white p-6 flex flex-col justify-between">
