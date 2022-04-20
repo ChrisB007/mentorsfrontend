@@ -1,58 +1,80 @@
 import { PrismaClient } from '@prisma/client';
 import Image from 'next/image';
+import Link from 'next/link';
+import ClipLoader from 'react-spinners/ClipLoader';
+import { useState, useEffect } from 'react';
 
 const SubCategory = ({ categories, id }) => {
+  const [loading, setLoading] = useState(false);
   const catId = Number(id);
+
+  useEffect(() => {
+    if (!categories) {
+      setLoading(true);
+    }
+  }, []);
 
   return (
     <>
-      <div className="bg-slate-50">
-        <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
-          <div className="space-y-12">
-            <ul className="flex justify-center items-center">
-              {categories.map((category) => {
+      <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center">
+            <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+              {/*{`Find a mentor in ${name}`}*/}
+            </h2>
+          </div>
+          <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+            {loading ? (
+              <ClipLoader
+                className="flex justify-center items-center"
+                color={'#555555'}
+                loading={loading}
+                size={50}
+              />
+            ) : (
+              categories.map((category) => {
                 const { Program } = category;
+
                 return (
                   <>
-                    {Program.map((mentor) => {
-                      const { subcategoryId } = mentor;
-
+                    {Program.map((program) => {
+                      const { subcategoryId, description, name } = program;
+                      console.log(program);
                       return (
                         <>
                           {subcategoryId === catId && (
                             <>
                               <div
-                                key={mentor.id}
+                                key={program.id}
                                 className="flex flex-col rounded-lg shadow-lg overflow-hidden"
                               >
-                                <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-12">
-                                  <div className="space-y-12">
-                                    <ul>
-                                      <li key={category.id} className="">
+                                <div className="flex-shrink-0">
+                                  <Image
+                                    className="h-40 w-full object-contain"
+                                    src={category.image}
+                                    alt={category.name}
+                                    layout="responsive"
+                                    width={300}
+                                    height={200}
+                                  />
+                                </div>
+                                <div className="flex-1 bg-white p-6 flex flex-col justify-between">
+                                  <div className="flex-1">
+                                    <Link href={`/categories/sub/${id}`}>
+                                      <a className="block mt-2">
                                         <div className="flex flex-col justify-center items-center">
-                                          <Image
-                                            className="w-40 h-40 rounded"
-                                            src={category.image}
-                                            alt={category.name}
-                                            width={200}
-                                            height={200}
-                                          />
-                                          <div className="flex flex-col justify-center items-center">
-                                            <h3 className="text-lg leading-6 font-medium text-gray-900 text-left m-3">
-                                              {`${category.name}`}
-                                            </h3>
-                                            <div className="bg-white mentor-box">
-                                              <p className="text-left">
-                                                {mentor.name}
-                                              </p>
-                                              <p className="text-left whitespace-normal truncate ...">
-                                                {mentor.description}
-                                              </p>
-                                            </div>
-                                          </div>
+                                          <p className="text-sm font-medium text-slate-600">
+                                            {category.name}
+                                          </p>
+                                          <p className="mt-3 text-base text-gray-500">
+                                            {name}
+                                          </p>
+                                          <p className="mt-3 text-base text-gray-500">
+                                            {description}
+                                          </p>
                                         </div>
-                                      </li>
-                                    </ul>
+                                      </a>
+                                    </Link>
                                   </div>
                                 </div>
                               </div>
@@ -63,8 +85,8 @@ const SubCategory = ({ categories, id }) => {
                     })}
                   </>
                 );
-              })}
-            </ul>
+              })
+            )}
           </div>
         </div>
       </div>
