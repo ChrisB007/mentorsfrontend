@@ -39,7 +39,7 @@ const SubCategory = ({ categories, id }) => {
                   <>
                     {Program.map((program) => {
                       const { subcategoryId, description, name } = program;
-                      console.log(program);
+
                       return (
                         <>
                           {subcategoryId === catId && (
@@ -60,7 +60,11 @@ const SubCategory = ({ categories, id }) => {
                                 </div>
                                 <div className="flex-1 bg-white p-6 flex flex-col justify-between">
                                   <div className="flex-1">
-                                    <Link href={`/categories/sub/${id}`}>
+                                    <Link
+                                      href={`/profile/${category.name
+                                        .split(' ')
+                                        .join('_')}`}
+                                    >
                                       <a className="block mt-2">
                                         <div className="flex flex-col justify-center items-center">
                                           <p className="text-sm font-medium text-slate-600">

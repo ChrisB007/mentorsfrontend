@@ -32,9 +32,9 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ];
 const stats = [
-  { label: 'Vacation days left', value: 12 },
-  { label: 'Sick days left', value: 4 },
-  { label: 'Personal days left', value: 2 },
+  { label: 'Free trial session', value: 'Yes' },
+  { label: '7-day session', value: '$40' },
+  { label: 'Monthly', value: '$110' },
 ];
 const actions = [
   {
@@ -313,8 +313,9 @@ export default function Details() {
                           key={stat.label}
                           className="px-6 py-5 text-sm font-medium text-center"
                         >
-                          <span className="text-gray-900">{stat.value}</span>{' '}
                           <span className="text-gray-600">{stat.label}</span>
+                          {': '}
+                          <span className="text-gray-900">{stat.value}</span>
                         </div>
                       ))}
                     </div>
