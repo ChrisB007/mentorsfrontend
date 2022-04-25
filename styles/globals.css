@@ -35,3 +35,10 @@
     height: 39rem;
   }
 }
+@media only screen and (max-width: 1594px) {
+  .heroimg {
+    width: 100%;
+    height: 297px;
+    box-sizing: border-box;
+  }
+}
