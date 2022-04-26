@@ -40,6 +40,7 @@ export default function Hero() {
           <img
             className="heroimg object-cover inset-0 w-full h-3/4 p-6"
             src="/images/heroimg.png"
+            alt="hero-image"
           />
         </div>
       </main>

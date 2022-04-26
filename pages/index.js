@@ -24,17 +24,16 @@ export default function Home({ categories }) {
             name="description"
             content="Up-skill or Learn new skills by practicing in real-time with experienced mentors using the 7–3–2–1 method "
           />
-          <link rel="icon" href="/favicon.ico" />
           <link
             rel="icon"
             type="image/png"
-            href="/favicon-16x16.png"
+            href="/images/favicon-16x16.png"
             sizes="16x16"
           />
           <link
             rel="icon"
             type="image/png"
-            href="/favicon-32x32.png"
+            href="/images/favicon-32x32.png"
             sizes="32x32"
           />
         </Head>

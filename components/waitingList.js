@@ -1,8 +1,16 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
+import Modal from './emailModal';
+import { ModalContext, useModal } from './context';
 
 const Waitinglist = () => {
   const [formEmail, setFormEmail] = useState('');
+  //  const { openModal } = useModal();
+  const [showModal, setShowModal] = useState(false);
+
+  const emailModl = () => setShowModal(true);
+
+  const closeEmailModl = () => setShowModal(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,6 +41,7 @@ const Waitinglist = () => {
 
   return (
     <div className=" shadow sm:rounded-lg">
+      <Modal show={showModal} close={closeEmailModl} />
       <div className="px-4 py-5 sm:p-6">
         <h3 className="text-lg leading-6 font-medium text-gray-900">
           We are launching soon!
@@ -60,6 +69,7 @@ const Waitinglist = () => {
           </div>
           <button
             type="submit"
+            onClick={emailModl}
             className="mt-3 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-slate-600 hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
           >
             Notify me

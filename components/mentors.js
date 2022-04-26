@@ -1,4 +1,3 @@
-import { useSession } from 'next-auth/react';
 import { QuestionMarkCircleIcon } from '@heroicons/react/solid';
 import Progress from './progress';
 import OverallProgress from './overallProgress';
