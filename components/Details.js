@@ -10,6 +10,7 @@ import {
   ReceiptRefundIcon,
   UsersIcon,
   XIcon,
+  CheckIcon,
 } from '@heroicons/react/outline';
 import Image from 'next/image';
 
@@ -28,7 +29,7 @@ const userNavigation = [
 const stats = [
   { label: 'Free session', value: 'Yes' },
   { label: 'Paid session', value: 'No' },
-  { label: 'Monthly', value: '$110' },
+  { label: 'Vetted', value: 'Yes' },
 ];
 const actions = [
   {
@@ -59,20 +60,20 @@ const actions = [
     iconForeground: 'text-yellow-700',
     iconBackground: 'bg-yellow-50',
   },
-  {
-    icon: ReceiptRefundIcon,
-    name: 'Submit an expense',
-    href: '#',
-    iconForeground: 'text-rose-700',
-    iconBackground: 'bg-rose-50',
-  },
-  {
-    icon: AcademicCapIcon,
-    name: 'Training',
-    href: '#',
-    iconForeground: 'text-indigo-700',
-    iconBackground: 'bg-indigo-50',
-  },
+  //  {
+  //    icon: ReceiptRefundIcon,
+  //    name: 'Submit an expense',
+  //    href: '#',
+  //    iconForeground: 'text-rose-700',
+  //    iconBackground: 'bg-rose-50',
+  //  },
+  //  {
+  //    icon: AcademicCapIcon,
+  //    name: 'Training',
+  //    href: '#',
+  //    iconForeground: 'text-indigo-700',
+  //    iconBackground: 'bg-indigo-50',
+  //  },
 ];
 const recentHires = [
   {
@@ -288,7 +289,7 @@ export default function Details({ user }) {
                           </div>
                           <div className="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
                             <p className="text-sm font-medium text-gray-600">
-                              Work with
+                              Take sessions with
                             </p>
                             <p className="text-xl font-bold text-gray-900 sm:text-2xl">
                               {user.name}
