@@ -33,28 +33,28 @@ const stats = [
 const actions = [
   {
     icon: ClockIcon,
-    name: 'My Approach',
+    name: 'Bio',
     href: '#',
     iconForeground: 'text-teal-700',
     iconBackground: 'bg-teal-50',
   },
   {
     icon: BadgeCheckIcon,
-    name: 'My Availability',
+    name: 'Approach',
     href: '#',
     iconForeground: 'text-purple-700',
     iconBackground: 'bg-purple-50',
   },
   {
     icon: UsersIcon,
-    name: 'Schedule a one-on-one',
+    name: 'Expected Outcome',
     href: '#',
     iconForeground: 'text-sky-700',
     iconBackground: 'bg-sky-50',
   },
   {
     icon: CashIcon,
-    name: 'Payroll',
+    name: 'Schedule one-on-one',
     href: '#',
     iconForeground: 'text-yellow-700',
     iconBackground: 'bg-yellow-50',
