@@ -42,8 +42,10 @@ model User {
       emailVerified DateTime?
       Role          Role?     @default(MENTEE)
       accounts      Account[]
+      profile       Profile?  @relation(fields: [profileId], references: [id])
       Program       Program[]
       sessions      Session[]
+      profileId     Int?
 }
 
 model VerificationToken {
@@ -58,6 +60,7 @@ model Profile {
       id     Int     @id @default(autoincrement())
       bio    String?
       userId Int     @unique
+      User   User[]
 }
 
 model Program {

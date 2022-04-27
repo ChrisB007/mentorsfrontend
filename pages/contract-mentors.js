@@ -72,7 +72,7 @@ export default function Example() {
 
       {/* Tiers */}
       <div className="mt-24 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
-        {pricing.tiers.map((tier) => (
+        {/*{pricing.tiers.map((tier) => (
           <div
             key={tier.title}
             className="relative p-8 bg-white border border-gray-200 rounded-2xl shadow-sm flex flex-col"
@@ -96,7 +96,6 @@ export default function Example() {
               </p>
               <p className="mt-6 text-gray-500">{tier.description}</p>
 
-              {/* Feature list */}
               <ul role="list" className="mt-6 space-y-6">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex">
@@ -122,7 +121,7 @@ export default function Example() {
               {tier.cta}
             </a>
           </div>
-        ))}
+        ))}*/}
       </div>
     </div>
   );

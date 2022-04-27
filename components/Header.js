@@ -183,11 +183,11 @@ export default function Header() {
                   </>
                 )}
               </Popover>
-              <Link href="/pricing">
+              {/*<Link href="/pricing">
                 <a className="text-base font-medium text-gray-500 hover:text-gray-900">
                   Pricing
                 </a>
-              </Link>
+              </Link>*/}
               <a
                 href="#"
                 className="text-base font-medium text-gray-500 hover:text-gray-900"
@@ -417,12 +417,12 @@ export default function Header() {
             </div>
             <div className="py-6 px-5">
               <div className="grid grid-cols-2 gap-4">
-                <a
+                {/*<a
                   href="#"
                   className="rounded-md text-base font-medium text-gray-900 hover:text-gray-700"
                 >
                   Pricing
-                </a>
+                </a>*/}
 
                 <a
                   href="#"

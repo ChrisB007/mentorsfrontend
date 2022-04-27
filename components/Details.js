@@ -11,14 +11,8 @@ import {
   UsersIcon,
   XIcon,
 } from '@heroicons/react/outline';
+import Image from 'next/image';
 
-const user = {
-  name: 'Chelsea Hagon',
-  email: 'chelsea.hagon@example.com',
-  role: 'Human Resources Manager',
-  imageUrl:
-    'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-};
 const navigation = [
   { name: 'Home', href: '#', current: true },
   { name: 'Profile', href: '#', current: false },
@@ -32,8 +26,8 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ];
 const stats = [
-  { label: 'Free trial session', value: 'Yes' },
-  { label: '7-day session', value: '$40' },
+  { label: 'Free session', value: 'Yes' },
+  { label: 'Paid session', value: 'No' },
   { label: 'Monthly', value: '$110' },
 ];
 const actions = [
@@ -138,7 +132,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function Details() {
+export default function Details({ user }) {
+  //  const profileUser = Object.values(user);
+
   return (
     <>
       <div className="min-h-full">
@@ -215,18 +211,23 @@ export default function Details() {
                         <div className="pt-4 pb-2">
                           <div className="flex items-center px-5">
                             <div className="flex-shrink-0">
-                              <img
+                              {/*<img
                                 className="h-10 w-10 rounded-full"
-                                src={user.imageUrl}
-                                alt=""
+                                src={user.image}
+                                alt={user.name}
+                              />*/}
+                              <Image
+                                className="h-10 w-full object-contain"
+                                src={user.image}
+                                alt={user.name}
+                                layout="responsive"
+                                width={100}
+                                height={100}
                               />
                             </div>
                             <div className="ml-3 min-w-0 flex-1">
                               <div className="text-base font-medium text-gray-800 truncate">
                                 {user.name}
-                              </div>
-                              <div className="text-sm font-medium text-gray-500 truncate">
-                                {user.email}
                               </div>
                             </div>
                             <button
@@ -281,8 +282,8 @@ export default function Details() {
                           <div className="flex-shrink-0">
                             <img
                               className="mx-auto h-20 w-20 rounded-full"
-                              src={user.imageUrl}
-                              alt=""
+                              src={user.image}
+                              alt={user.name}
                             />
                           </div>
                           <div className="mt-4 text-center sm:mt-0 sm:pt-1 sm:text-left">
@@ -293,7 +294,7 @@ export default function Details() {
                               {user.name}
                             </p>
                             <p className="text-sm font-medium text-gray-600">
-                              {user.role}
+                              {user.ROLE}
                             </p>
                           </div>
                         </div>
