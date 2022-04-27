@@ -58,7 +58,7 @@ export default function Modal({ show, close }) {
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      We will get back to you when we launch.
+                      We will get back to you shortly.
                     </p>
                   </div>
                 </div>

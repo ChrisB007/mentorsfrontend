@@ -33,14 +33,14 @@ const stats = [
 const actions = [
   {
     icon: ClockIcon,
-    name: 'Request time off',
+    name: 'My Approach',
     href: '#',
     iconForeground: 'text-teal-700',
     iconBackground: 'bg-teal-50',
   },
   {
     icon: BadgeCheckIcon,
-    name: 'Benefits',
+    name: 'My Availability',
     href: '#',
     iconForeground: 'text-purple-700',
     iconBackground: 'bg-purple-50',
