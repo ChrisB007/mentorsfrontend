@@ -125,7 +125,7 @@ export default function Mentors({ user }) {
                           My messages
                         </dt>
                         <dd className="mt-1 text-sm text-gray-900">
-                          You have 10 new messages
+                          You have {`"numOfMessages"`} new messages
                         </dd>
                       </div>
                       <div className="sm:col-span-1">

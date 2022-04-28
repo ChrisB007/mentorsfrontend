@@ -8,7 +8,7 @@ const Index = ({ user }) => {
   return (
     <>
       <div>
-        {user.Role === 'MENTEE' ? (
+        {user.Role === 'Mentee' ? (
           <Mentees user={user} />
         ) : (
           <Mentors user={user} />

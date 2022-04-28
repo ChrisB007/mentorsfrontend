@@ -40,7 +40,7 @@ model User {
       email          String?       @unique
       image          String?
       emailVerified  DateTime?
-      Role           Role?         @default(MENTEE)
+      Role           Role?         @default(Mentee)
       accounts       Account[]
       profile        Profile?      @relation(fields: [profileId], references: [id])
       Program        Program[]
@@ -61,6 +61,10 @@ model VerificationToken {
 model Profile {
       id            Int            @id @default(autoincrement())
       bio           String?
+      approach      String?
+      outcome       String?
+      schedule      String?
+      curicullum    String?
       userId        Int            @unique
       announcements Announcement[]
       User          User[]
@@ -164,8 +168,8 @@ model Sales {
 }
 
 enum Role {
-      ADMIN
-      MENTEE
-      MENTOR
+      Admin
+      Mentee
+      Mentor
 
 }
