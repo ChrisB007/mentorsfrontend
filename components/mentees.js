@@ -65,7 +65,7 @@ export default function Mentees({ user }) {
                 <p className="text-sm flex flex-col font-medium text-gray-500">
                   {user.email}
                   <span className="text-gray-900">
-                    Logged in as a {`${user.Role.toLowerCase()}`}
+                    Logged in as a {`${user.Role}`}
                   </span>
                 </p>
               </div>

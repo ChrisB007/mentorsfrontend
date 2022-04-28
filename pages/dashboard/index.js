@@ -4,7 +4,6 @@ import Mentees from '../../components/mentees';
 import { PrismaClient } from '@prisma/client';
 
 const Index = ({ user }) => {
-  console.log(user.Role);
   return (
     <>
       <div>
