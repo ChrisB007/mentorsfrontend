@@ -96,7 +96,7 @@ export async function getServerSideProps(context) {
 
   const categories = await prisma.user.findMany({
     where: {
-      Role: 'MENTOR',
+      Role: 'Mentor',
     },
     select: {
       id: true,
