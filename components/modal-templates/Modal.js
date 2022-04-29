@@ -186,13 +186,15 @@ export default function Modal({ show, close }) {
                 {/*Curriculum section*/}
                 <div className="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
                   Thank you for the above input. The next step is to set up you
-                  curriculum - Don't worry, we'll guide you through it.
+                  curriculum - Don&apos;t worry, we&apos;ll guide you through
+                  it.
                 </div>
 
                 {/*Availability section*/}
                 <div className="bg-white shadow px-4 py-5 sm:rounded-lg sm:p-6">
                   Thank you for the above input. The next step is to set up you
-                  curriculum - Don't worry, we'll guide you through it.
+                  curriculum - Don&apos;t worry, we&apos;ll guide you through
+                  it.
                 </div>
 
                 <div className="flex justify-end">
