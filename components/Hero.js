@@ -17,7 +17,7 @@ export default function Hero() {
             <h2>
               <span className="text-4xl font-bold text-pink-700">
                 with
-                <span className="line-through pl-2 font-thin space-x-2">
+                <span className="line-through pl-2 text-gray-600 font-thin space-x-2">
                   Tutors
                 </span>{' '}
                 Mentors
