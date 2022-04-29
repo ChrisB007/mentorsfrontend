@@ -1,4 +1,5 @@
 import { useSession } from 'next-auth/react';
+import { useState } from 'react';
 import { QuestionMarkCircleIcon } from '@heroicons/react/solid';
 import Progress from './progress';
 import OverallProgress from './overallProgress';
@@ -6,6 +7,7 @@ import Dashsessions from './dashboardsessions';
 import Tabs from './dashboardtabs';
 import Image from 'next/image';
 import Search from './search';
+import Modal from './modal-templates/Modal';
 
 const comments = [
   {
@@ -36,9 +38,19 @@ function classNames(...classes) {
 }
 
 export default function Mentees({ user }) {
+  const [modal, setModal] = useState(false);
+
+  const openModal = () => {
+    setModal(true);
+  };
+  const closeModal = () => {
+    setModal(false);
+  };
+
   return (
     <>
       <div className="min-h-full">
+        {/*<Modal open={modal} onClose={closeModal} />*/}
         <main className="py-10">
           {/* Page header */}
           <div className="max-w-3xl mx-auto px-4 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8">
@@ -76,12 +88,7 @@ export default function Mentees({ user }) {
             <div className="mt-6 flex flex-col-reverse justify-stretch space-y-4 space-y-reverse sm:flex-row-reverse sm:justify-end sm:space-x-reverse sm:space-y-0 sm:space-x-3 md:mt-0 md:flex-row md:space-x-3">
               <button
                 type="button"
-                className="inline-flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500"
-              >
-                Find a Mentor
-              </button>
-              <button
-                type="button"
+                onClick={openModal}
                 className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-500"
               >
                 Be a Mentor
@@ -221,15 +228,6 @@ export default function Mentees({ user }) {
                   </div>
                   <div className="bg-gray-50 px-4 py-6 sm:px-6">
                     <div className="flex space-x-3">
-                      <div className="flex-shrink-0">
-                        {/*<Image
-                          className="h-16 w-16 rounded-full"
-                          src={user.image}
-                          alt="user.name"
-                          width="48"
-                          height="48"
-                        />*/}
-                      </div>
                       <div className="min-w-0 flex-1">
                         <form action="#">
                           <div>
@@ -311,6 +309,7 @@ export default function Mentees({ user }) {
               </div>
             </section>
           </div>
+          <Modal show={modal} close={closeModal} />
         </main>
       </div>
     </>

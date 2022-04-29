@@ -40,6 +40,7 @@ export default function Home({ categories }) {
         <div className="">
           <main className="bg-gradient-to-r from-gray-50 via-slate-300 to-gray-50 pb-6">
             <Hero />
+            {/*Lists of categories*/}
             <div className="grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 px-3 max-w-7xl m-auto pb-3 mt-3">
               {isLoading ? (
                 <PropagateLoader

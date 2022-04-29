@@ -30,7 +30,6 @@ const SubCategory = ({ categories, id }) => {
             ) : (
               categories.map((category) => {
                 const { Program } = category;
-
                 return (
                   <>
                     {Program.map((program) => {
@@ -50,8 +49,8 @@ const SubCategory = ({ categories, id }) => {
                                     src={category.image}
                                     alt={category.name}
                                     layout="responsive"
-                                    width={300}
-                                    height={200}
+                                    width={200}
+                                    height={100}
                                   />
                                 </div>
                                 <div className="flex-1 bg-white p-6 flex flex-col justify-between">

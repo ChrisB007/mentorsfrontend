@@ -57,6 +57,7 @@ export default function Example() {
               </div>
             </div>
           </div>
+          {/*Displays list of integration tools*/}
           <div className="mt-8 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-0 lg:grid-cols-2">
             {solution.map((item) => (
               <>

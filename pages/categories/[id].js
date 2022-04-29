@@ -6,7 +6,7 @@ import ClipLoader from 'react-spinners/ClipLoader';
 
 const Category = ({ categories }) => {
   const [loading, setLoading] = useState(false);
-  const { name, subcategories } = categories;
+  const { subcategories } = categories;
 
   useEffect(() => {
     if (!subcategories) {
@@ -19,11 +19,10 @@ const Category = ({ categories }) => {
       <div className="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
         <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
-            <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
-              {`Find a mentor in ${name}`}
-            </h2>
+            <h2 className="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl"></h2>
           </div>
           <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
+            {/*Loader*/}
             {loading ? (
               <ClipLoader
                 className="flex justify-center items-center"
@@ -33,6 +32,7 @@ const Category = ({ categories }) => {
               />
             ) : (
               subcategories.map((categoryItem) => {
+                //  Display list of mentors by category
                 const { id, name, description, image, url } = categoryItem;
                 return (
                   <div

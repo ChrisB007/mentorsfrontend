@@ -19,7 +19,7 @@ const ModalProvider = ({ children }) => {
   );
 };
 
-//costom hook
+//custom hook
 export const useModal = () => {
   return useContext(ModalContext);
 };

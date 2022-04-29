@@ -1,15 +1,13 @@
 import { useState, useContext } from 'react';
 import axios from 'axios';
-import Modal from './emailModal';
+import Modal from './modal-templates/emailModal';
 import { ModalContext, useModal } from './context';
 
 const Waitinglist = () => {
   const [formEmail, setFormEmail] = useState('');
-  //  const { openModal } = useModal();
   const [showModal, setShowModal] = useState(false);
 
   const emailModl = () => setShowModal(true);
-
   const closeEmailModl = () => setShowModal(false);
 
   const handleSubmit = async (e) => {

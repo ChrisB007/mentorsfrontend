@@ -1,19 +1,26 @@
-export default function Search() {
+export default function Example() {
   return (
-    <div className="relative border border-gray-300 rounded-md px-3 py-2 shadow-sm focus-within:ring-1 focus-within:ring-gray-600 focus-within:border-gray-600">
+    <div>
       <label
-        htmlFor="name"
-        className="absolute -top-2 left-2 -mt-px inline-block px-1 bg-white text-xs font-medium text-gray-900"
+        htmlFor="search"
+        className="block text-sm font-medium text-gray-700"
       >
-        Find a mentor for...
+        Quick search
       </label>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        className="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
-        placeholder="e.g: Javascript, Piano, Knitting"
-      />
+      <div className="mt-1 relative flex items-center">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="search for mentor"
+          className="shadow-sm text-center h-10 m-2 focus:ring-gray-500 focus:border-gray-500 block w-full pr-12  sm:w-80 sm:text-sm lg:w-80 border-gray-300 rounded-md"
+        />
+        <div className="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
+          <button className="inline-flex items-center border border-gray-200 rounded px-2 text-sm font-sans font-medium text-gray-400">
+            Search
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

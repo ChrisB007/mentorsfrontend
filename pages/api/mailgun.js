@@ -5,6 +5,7 @@ let mg = mailgunLoader({
   domain: 'mg.mentorsparlor.com',
 });
 
+//Body construct
 const emailBody = (from, to, subject, text) => {
   const data = {
     from,
@@ -12,11 +13,10 @@ const emailBody = (from, to, subject, text) => {
     subject,
     text,
   };
-  return mg.messages().send(data, function (error, body) {
-    console.log(body);
-  });
+  return mg.messages().send(data, function (error, body) {});
 };
 
+//Sending email
 const sendEmail = async (req, res) => {
   const { email } = req.body;
   const subject = 'Thank you for your interest in Mentors Parlor!';

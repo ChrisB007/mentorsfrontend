@@ -9,7 +9,7 @@ export default function Login({ providers }) {
             Get access with these providers
           </h2>
         </div>
-
+        {/*Cycles over the providers and renders a button for each one.*/}
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
             <div className="mt-6">

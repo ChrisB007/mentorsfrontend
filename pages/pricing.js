@@ -1,4 +1,3 @@
-/* This example requires Tailwind CSS v2.0+ */
 import { CheckIcon } from '@heroicons/react/outline';
 
 const features = [
@@ -51,6 +50,8 @@ export default function Pricing() {
               elementum blandit et.
             </p>
           </div>
+
+          {/*Displaying list of the features*/}
           <div className="mt-4 sm:mt-8 md:mt-10 md:grid md:grid-cols-2 md:gap-x-8 xl:mt-0 xl:col-span-2">
             <ul role="list" className="divide-y divide-gray-200">
               {features.slice(0, 5).map((feature, featureIdx) =>

@@ -21,6 +21,7 @@ export default function Hiring() {
           </div>
         </div>
       </div>
+      {/*Shows list of hiring opportunities*/}
       <div className="mt-8 bg-white pb-16 sm:mt-12 sm:pb-20 lg:pb-28">
         <div className="relative">
           <div className="absolute inset-0 h-1/2 bg-gray-100" />
@@ -47,6 +48,7 @@ export default function Hiring() {
                     </h4>
                     <div className="flex-1 border-t-2 border-gray-200" />
                   </div>
+                  {/*Goes through and describes the benefits of the position.*/}
                   <ul
                     role="list"
                     className="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5"
@@ -127,6 +129,7 @@ export default function Hiring() {
                     </h4>
                     <div className="flex-1 border-t-2 border-gray-200" />
                   </div>
+                  {/*Goes through and describes the benefits of the position.*/}
                   <ul
                     role="list"
                     className="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5"
@@ -202,6 +205,7 @@ export default function Hiring() {
                     </h4>
                     <div className="flex-1 border-t-2 border-gray-200" />
                   </div>
+                  {/*Goes through and describes the benefits of the position.*/}
                   <ul
                     role="list"
                     className="mt-8 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5"
