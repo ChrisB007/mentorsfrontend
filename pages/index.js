@@ -9,7 +9,7 @@ export default function Home({ categories }) {
     <>
       <div className="">
         <Head>
-          <title>Mentors Parlor</title>
+          <title>MentorsParlor</title>
           <meta
             name="description"
             content="Up-skill or Learn new skills by practicing in real-time with experienced mentors using the 7–3–2–1 method "
