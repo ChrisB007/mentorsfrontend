@@ -1,5 +1,5 @@
 import Details from '../../components/Details';
-import { PrismaClient } from '@prisma/client';
+import prisma from '../../lib/prisma';
 
 const Profile = ({ user }) => {
   return (
@@ -14,7 +14,6 @@ const Profile = ({ user }) => {
 export async function getServerSideProps(context) {
   const { id } = context.query;
 
-  const prisma = new PrismaClient();
   const user = await prisma.user.findUnique({
     where: {
       id: id,

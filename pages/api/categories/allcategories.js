@@ -1,9 +1,9 @@
 import prisma from '../../../lib/prisma';
 
-const ArtData = async (req, res) => {
+const AllCategories = async (req, res) => {
   try {
-    console.log('Hello from the ArtData server');
-    //    res.status(200).json(data);
+    const categories = await prisma.category.findMany({});
+    res.status(200).json(categories);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'something went wrong', error });
@@ -12,4 +12,4 @@ const ArtData = async (req, res) => {
   }
 };
 
-export default ArtData;
+export default AllCategories;

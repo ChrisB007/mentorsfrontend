@@ -1,8 +1,6 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '../../../lib/prisma';
 
 const Delete = async (req, res) => {
-  const prisma = new PrismaClient();
-
   try {
     const category = await prisma.category.delete({
       where: {

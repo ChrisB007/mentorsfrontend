@@ -2,19 +2,9 @@ import Head from 'next/head';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
 import Category from '../components/Categories';
-import { PrismaClient } from '@prisma/client';
-import { useState, useEffect } from 'react';
-import PropagateLoader from 'react-spinners/PropagateLoader';
+import prisma from '../lib/prisma';
 
 export default function Home({ categories }) {
-  const [isLoading, setLoading] = useState(false);
-
-  useEffect(() => {
-    if (!categories) {
-      setLoading(true);
-    }
-  }, []);
-
   return (
     <>
       <div className="">
@@ -42,29 +32,20 @@ export default function Home({ categories }) {
             <Hero />
             {/*Lists of categories*/}
             <div className="grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 px-3 max-w-7xl m-auto pb-3 mt-3">
-              {isLoading ? (
-                <PropagateLoader
-                  className="spinner flex justify-center items-center"
-                  color={'#555555'}
-                  loading={isLoading}
-                  size={10}
-                />
-              ) : (
-                categories.map((category) => {
-                  return (
-                    <div key={category.id} className="">
-                      <Category
-                        key={category.id}
-                        id={category.id}
-                        name={category.name}
-                        url={`/categories/${category.id}`}
-                        icon={category.icon}
-                        subCategories={category.subcategories}
-                      />
-                    </div>
-                  );
-                })
-              )}
+              {categories.map((category) => {
+                return (
+                  <div key={category.id} className="">
+                    <Category
+                      key={category.id}
+                      id={category.id}
+                      name={category.name}
+                      url={`/categories/${category.id}`}
+                      icon={category.icon}
+                      subCategories={category.subcategories}
+                    />
+                  </div>
+                );
+              })}
             </div>
             <Features />
           </main>
@@ -74,40 +55,35 @@ export default function Home({ categories }) {
   );
 }
 
-export async function getStaticProps() {
-  const prisma = new PrismaClient();
-  try {
-    const categories = await prisma.category.findMany({
-      select: {
-        id: true,
-        name: true,
-        icon: true,
-        url: true,
-        subcategories: {
-          select: {
-            id: true,
-            name: true,
-            url: true,
-            icon: true,
-          },
-          select: {
-            sub: {
-              select: {
-                id: true,
-                name: true,
-                url: true,
-                description: true,
-              },
+export async function getServerSideProps() {
+  const categories = await prisma.category.findMany({
+    select: {
+      id: true,
+      name: true,
+      icon: true,
+      url: true,
+      subcategories: {
+        select: {
+          id: true,
+          name: true,
+          url: true,
+          icon: true,
+        },
+        select: {
+          sub: {
+            select: {
+              id: true,
+              name: true,
+              url: true,
+              description: true,
             },
           },
         },
       },
-    });
+    },
+  });
 
-    return {
-      props: { categories },
-    };
-  } catch (error) {
-    console.error(error);
-  }
+  return {
+    props: { categories },
+  };
 }

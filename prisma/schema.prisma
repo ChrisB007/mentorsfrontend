@@ -1,6 +1,5 @@
 generator client {
-      provider        = "prisma-client-js"
-      previewFeatures = ["dataProxy"]
+      provider = "prisma-client-js"
 }
 
 datasource db {
@@ -63,7 +62,7 @@ model Profile {
       bio           String?
       approach      String?
       outcome       String?
-      schedule      String?
+      groupSession  Boolean?
       curicullum    String?
       userId        Int            @unique
       announcements Announcement[]

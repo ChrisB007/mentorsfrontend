@@ -1,7 +1,7 @@
-//import React from 'react';
+import React from 'react';
 
-//const Mentors = (req, res) => {
-//  return <div>Mentors</div>;
-//};
+const Mentors = (req, res) => {
+  return <div>Mentors</div>;
+};
 
-//export default Mentors;
+export default Mentors;
