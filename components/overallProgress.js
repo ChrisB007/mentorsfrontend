@@ -3,32 +3,20 @@ import { CheckIcon } from '@heroicons/react/solid';
 
 const steps = [
   {
-    name: 'Create account',
-    description: 'Vitae sed mi luctus laoreet.',
+    name: 'Completed programs',
+    description: 'See what you have completed here.',
     href: '#',
     status: 'complete',
   },
   {
-    name: 'Profile information',
-    description: 'Cursus semper viverra facilisis et et some more.',
+    name: 'Current programs',
+    description: 'See what you are currently working on here.',
     href: '#',
     status: 'current',
   },
   {
-    name: 'Business information',
-    description: 'Penatibus eu quis ante.',
-    href: '#',
-    status: 'upcoming',
-  },
-  {
-    name: 'Theme',
-    description: 'Faucibus nec enim leo et.',
-    href: '#',
-    status: 'upcoming',
-  },
-  {
-    name: 'Preview',
-    description: 'Iusto et officia maiores porro ad non quas.',
+    name: 'Upcoming programs',
+    description: 'See what you are planning to work on here.',
     href: '#',
     status: 'upcoming',
   },

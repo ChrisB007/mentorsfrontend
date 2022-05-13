@@ -5,11 +5,11 @@ const activity = [
   {
     id: 1,
     type: 'comment',
-    person: { name: 'Eduardo Benz', href: '#' },
+    person: { name: 'Example Mentor', href: '#' },
     imageUrl:
       'https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
     comment:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. ',
+      'This is an high-level overview of your progress in the last 7 days. Your mentor leaves a comment here for you.',
     date: '6d ago',
   },
   {
@@ -28,16 +28,6 @@ const activity = [
       { name: 'Accessibility', href: '#', color: 'bg-indigo-500' },
     ],
     date: '6h ago',
-  },
-  {
-    id: 4,
-    type: 'comment',
-    person: { name: 'Jason Meyers', href: '#' },
-    imageUrl:
-      'https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
-    comment:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tincidunt nunc ipsum tempor purus vitae id. Morbi in vestibulum nec varius. Et diam cursus quis sed purus nam. Scelerisque amet elit non sit ut tincidunt condimentum. Nisl ultrices eu venenatis diam.',
-    date: '2h ago',
   },
 ];
 
@@ -107,7 +97,10 @@ export default function Progress() {
                       </div>
                     </div>
                     <div className="min-w-0 flex-1 py-1.5">
-                      <div className="text-sm text-gray-500">
+                      <div className="font-medium text-sm text-gray-900">
+                        More activities are shown here
+                      </div>
+                      {/*<div className="text-sm text-gray-500">
                         <a
                           href={activityItem.person.href}
                           className="font-medium text-gray-900"
@@ -124,7 +117,7 @@ export default function Progress() {
                         <span className="whitespace-nowrap">
                           {activityItem.date}
                         </span>
-                      </div>
+                      </div>*/}
                     </div>
                   </>
                 ) : activityItem.type === 'tags' ? (
@@ -140,7 +133,10 @@ export default function Progress() {
                       </div>
                     </div>
                     <div className="min-w-0 flex-1 py-0">
-                      <div className="text-sm leading-8 text-gray-500">
+                      <div className="font-medium text-sm text-gray-900">
+                        Monitor your progress in the last 7-days
+                      </div>
+                      {/*<div className="text-sm leading-8 text-gray-500">
                         <span className="mr-0.5">
                           <a
                             href={activityItem.person.href}
@@ -176,7 +172,7 @@ export default function Progress() {
                         <span className="whitespace-nowrap">
                           {activityItem.date}
                         </span>
-                      </div>
+                      </div>*/}
                     </div>
                   </>
                 ) : null}

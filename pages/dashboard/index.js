@@ -1,7 +1,7 @@
 import { getSession, useSession } from 'next-auth/react';
 import Mentors from '../../components/mentors';
 import Mentees from '../../components/mentees';
-import { PrismaClient } from '@prisma/client';
+import prisma from '../../lib/prisma';
 
 const Index = ({ user }) => {
   return (
@@ -21,7 +21,6 @@ export default Index;
 
 export async function getServerSideProps(context) {
   const session = await getSession(context);
-  const prisma = new PrismaClient();
 
   if (!session) {
     return {

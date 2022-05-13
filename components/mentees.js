@@ -8,6 +8,7 @@ import Tabs from './dashboardtabs';
 import Image from 'next/image';
 import Search from './search';
 import Modal from './modal-templates/Modal';
+import Link from 'next/link';
 
 const comments = [
   {
@@ -122,10 +123,13 @@ export default function Mentees({ user }) {
                     <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
                       <div className="sm:col-span-1">
                         <dt className="text-sm font-medium text-gray-500">
-                          My sessions
+                          My Mentors
                         </dt>
                         <dd className="mt-1 text-sm text-gray-900">
-                          JavaScript, React, Music
+                          You have no Mentors -{' '}
+                          <Link href="#">
+                            <a className="text-xs">Find a Mentor</a>
+                          </Link>
                         </dd>
                       </div>
                       <div className="sm:col-span-1">
@@ -133,7 +137,7 @@ export default function Mentees({ user }) {
                           My messages
                         </dt>
                         <dd className="mt-1 text-sm text-gray-900">
-                          You have 01 new messages
+                          You have no new message
                         </dd>
                       </div>
                       <div className="sm:col-span-1">
@@ -141,7 +145,7 @@ export default function Mentees({ user }) {
                           My Rewards
                         </dt>
                         <dd className="mt-1 text-sm text-gray-900">
-                          Rewards are listed here
+                          You have no rewards yet.
                         </dd>
                       </div>
                       <div className="sm:col-span-1">
@@ -154,9 +158,12 @@ export default function Mentees({ user }) {
                       </div>
                     </dl>
                     <h2 className="text-sm mt-4 mb-2 font-medium text-gray-500">
-                      Upcoming Sessions
+                      Up-coming Sessions
                     </h2>
-                    <Dashsessions />
+                    <dd className="mt-1 text-sm text-gray-900">
+                      You have no up-coming sessions.
+                    </dd>
+                    {/*<Dashsessions />*/}
                   </div>
                   <div>
                     <a
@@ -182,7 +189,8 @@ export default function Mentees({ user }) {
                       </h2>
                     </div>
                     <div className="px-4 py-6 sm:px-6">
-                      <ul role="list" className="space-y-8">
+                      <p>You have no Messages</p>
+                      {/*<ul role="list" className="space-y-8">
                         {comments.map((comment) => (
                           <li key={comment.id}>
                             <div className="flex space-x-3">
@@ -223,13 +231,13 @@ export default function Mentees({ user }) {
                             </div>
                           </li>
                         ))}
-                      </ul>
+                      </ul>*/}
                     </div>
                   </div>
                   <div className="bg-gray-50 px-4 py-6 sm:px-6">
                     <div className="flex space-x-3">
                       <div className="min-w-0 flex-1">
-                        <form action="#">
+                        {/*<form action="#">
                           <div>
                             <label htmlFor="comment" className="sr-only">
                               About
@@ -261,7 +269,7 @@ export default function Mentees({ user }) {
                               Comment
                             </button>
                           </div>
-                        </form>
+                        </form>*/}
                       </div>
                     </div>
                   </div>
@@ -303,7 +311,7 @@ export default function Mentees({ user }) {
                     type="button"
                     className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
                   >
-                    Advance to offer
+                    Take a deep dive
                   </button>
                 </div>
               </div>
