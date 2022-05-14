@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router';
 import { Fragment } from 'react';
 import { Menu, Popover, Transition } from '@headlessui/react';
-import { SearchIcon } from '@heroicons/react/solid';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
-import Tabs from '../../../components/dashboardtabs';
+import Account from '../../../components/Account';
+import Search from '../../../components/search';
 
 const user = {
   name: 'Chelsea Hagon',
@@ -45,41 +45,10 @@ export default function Content() {
           <>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="relative flex justify-between xl:grid xl:grid-cols-12 lg:gap-8">
-                {/*<div className="flex md:absolute md:left-0 md:inset-y-0 lg:static xl:col-span-2"></div>*/}
                 <div className="min-w-0 flex-1 md:px-8 lg:px-0 xl:col-span-6">
-                  <div className="flex items-center px-6 py-4 md:max-w-3xl md:mx-auto lg:max-w-none lg:mx-0 xl:px-0">
-                    <div className="w-3/4">
-                      <label htmlFor="search" className="sr-only">
-                        Search
-                      </label>
-                      <div className="relative">
-                        <div className="pointer-events-none absolute inset-y-0 left-0 pl-3 flex items-center">
-                          <SearchIcon
-                            className="h-5 w-5 text-gray-400"
-                            aria-hidden="true"
-                          />
-                        </div>
-                        <input
-                          id="search"
-                          name="search"
-                          className="block w-full bg-white border border-gray-300 rounded-md py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:outline-none focus:text-gray-900 focus:placeholder-gray-400 focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                          placeholder="Search Mentors"
-                          type="search"
-                        />
-                      </div>
-                    </div>
+                  <div className="flex justify-end items-center px-6 py-4 md:max-w-3xl md:mx-auto lg:mx-0 xl:px-0">
+                    <Search />
                   </div>
-                </div>
-                <div className="flex items-center md:absolute md:right-0 md:inset-y-0 lg:hidden">
-                  {/* Mobile menu button */}
-                  <Popover.Button className="-mx-2 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                    <span className="sr-only">Open menu</span>
-                    {open ? (
-                      <XIcon className="block h-6 w-6" aria-hidden="true" />
-                    ) : (
-                      <MenuIcon className="block h-6 w-6" aria-hidden="true" />
-                    )}
-                  </Popover.Button>
                 </div>
               </div>
             </div>
@@ -145,19 +114,12 @@ export default function Content() {
       </Popover>
 
       <div className=" py-6">
-        <div className="max-w-3xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
-          <main className="lg:col-span-9 xl:col-span-6 w-full">
-            {/* Your content */}
-            <div className="flex px-4 py-3 space-y-6 text-2xl text-gray-800 ">
-              Your<span className="capitalize mx-1 "> {content} </span>
+        <div className="mx-auto ">
+          <main className="w-full">
+            <div>
+              <Account />
             </div>
           </main>
-          <aside className="hidden xl:block xl:col-span-4">
-            <div className="sticky top-6 space-y-4">
-              {/*{ Side Contents }*/}
-              This is the sidebar
-            </div>
-          </aside>
         </div>
       </div>
     </div>
