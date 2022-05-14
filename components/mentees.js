@@ -40,6 +40,7 @@ function classNames(...classes) {
 
 export default function Mentees({ user }) {
   const [modal, setModal] = useState(false);
+  const [tabs, setTabs] = useState('');
 
   const openModal = () => {
     setModal(true);
@@ -51,7 +52,6 @@ export default function Mentees({ user }) {
   return (
     <>
       <div className="min-h-full">
-        {/*<Modal open={modal} onClose={closeModal} />*/}
         <main className="py-10">
           {/* Page header */}
           <div className="max-w-3xl mx-auto px-4 sm:px-6 md:flex md:items-center md:justify-between md:space-x-5 lg:max-w-7xl lg:px-8">
@@ -99,8 +99,8 @@ export default function Mentees({ user }) {
 
           <div className="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
             <div className="space-y-6 lg:col-start-1 lg:col-span-2">
-              {/* Description list*/}
-              <Tabs />
+              {/* Tabs list*/}
+              <Tabs tabs={tabs} />
               <section aria-labelledby="applicant-information-title">
                 <div className="bg-white shadow sm:rounded-lg">
                   <div className="px-4 py-5 sm:px-6">
@@ -108,14 +108,11 @@ export default function Mentees({ user }) {
                       id="applicant-information-title"
                       className="text-lg leading-6 font-medium text-gray-900"
                     >
-                      Profile Information
+                      Basic Information
                     </h2>
                     <div className="flex justify-between">
                       <p className="mt-1 max-w-2xl text-sm text-gray-500">
                         Personal details and session information
-                      </p>
-                      <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                        Edit Information
                       </p>
                     </div>
                   </div>

@@ -85,14 +85,11 @@ export default function Mentors({ user }) {
                       id="applicant-information-title"
                       className="text-lg leading-6 font-medium text-gray-900"
                     >
-                      Profile Information
+                      Basic Information
                     </h2>
                     <div className="flex justify-between">
                       <p className="mt-1 max-w-2xl text-sm text-gray-500">
                         Personal details and session information
-                      </p>
-                      <p className="mt-1 max-w-2xl text-sm text-gray-500">
-                        Edit Information
                       </p>
                     </div>
                   </div>

@@ -45,6 +45,8 @@ model User {
       Program        Program[]
       sessions       Session[]
       profileId      Int?
+      mentor         User[]        @relation("USER_MENTOR", references: [id])
+      mentee         User[]        @relation("USER_MENTOR", references: [id])
       Announcement   Announcement? @relation(fields: [announcementId], references: [id])
       announcementId Int?
 }

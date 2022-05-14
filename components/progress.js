@@ -9,7 +9,7 @@ const activity = [
     imageUrl:
       'https://images.unsplash.com/photo-1520785643438-5bf77931f493?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80',
     comment:
-      'This is an high-level overview of your progress in the last 7 days. Your mentor leaves a comment here for you.',
+      'This is a high-level overview of your progress in the last 7 days. Here, your mentor leaves comments for you. This stop showing once you start getting',
     date: '6d ago',
   },
   {

@@ -1,9 +1,9 @@
 const tabs = [
-  { name: 'My Account', href: '#', current: true },
-  { name: 'My Sessions', href: '#', current: false },
-  { name: 'My Group', href: '#', current: false },
-  { name: 'My Rewards', href: '#', current: false },
-  { name: 'My Purchases', href: '#', current: false },
+  { name: 'My Account', href: `dashboard/tabs/account`, current: false },
+  { name: 'My Sessions', href: 'dashboard/tabs/sessions', current: false },
+  { name: 'My Group', href: 'dashboard/tabs/group', current: false },
+  { name: 'My Rewards', href: 'dashboard/tabs/rewards', current: false },
+  { name: 'My Purchases', href: 'dashboard/tabs/purchases', current: false },
 ];
 
 function classNames(...classes) {
@@ -21,8 +21,8 @@ export default function Tabs() {
         <select
           id="tabs"
           name="tabs"
+          onChange={(e) => {}}
           className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md"
-          defaultValue={tabs.find((tab) => tab.current).name}
         >
           {tabs.map((tab) => (
             <option key={tab.name}>{tab.name}</option>
